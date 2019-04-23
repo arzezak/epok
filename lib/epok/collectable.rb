@@ -6,7 +6,7 @@ module Epok
       base.class_eval do
         extend Forwardable
 
-        def_delegators :results, :first
+        def_delegators :results, :entries, :first
       end
     end
 
