@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "epok"
+require "irb"
+
+@search = Epok::Search.new("garicoits")
+
+obelisco = Epok::Location.new(x: -58.381570, y: -34.603738)
+@geocoder = Epok::Geocoder.new(obelisco, "estaciones_de_subte")
+
+IRB.start(__FILE__)
