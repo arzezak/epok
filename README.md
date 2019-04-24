@@ -1,15 +1,13 @@
 # Epok
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/epok`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+GCBA EPOk wrapper to query indexed geographic objects.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'epok'
+gem "epok"
 ```
 
 And then execute:
@@ -22,7 +20,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+>> obelisco = Epok::Location.new(x: -58.381570, y: -34.603738)
+=> #<struct Epok::Location x=-58.38157, y=-34.603738>
+
+>> pharmacies_around_obelisco = Epok.geocoder(obelisco, "farmacias")
+=> #<Epok::Geocoder:0x00007f8719ab4f08 @x=-58.38157, @y=-34.603738, @categories="farmacias">
+
+>> pharmacies_around_obelisco.first.content
+=> {"Nombre"=>"Farmacia en PELLEGRINI, CARLOS 765", "Teléfono"=>"43223198 43220298"}
+
+>> cgp = Epok.search("cgp")
+=> #<Epok::Search:0x00007f871a09ac60 @query="cgp">
+
+>> sede_4 = cgp.first
+=> #<Epok::Object:0x00007f8719b36788 @id="sedes_de_comunas|4">
+
+>> sede_4.name
+=> "Sede Comunal 4"
+
+>> sede_4.content
+=> {"Nombre"=>"Sede Comunal 4", "Dirección"=>"BARCO CENTENERA del 2906", "Teléfonos"=>"4918-2243/1815/8920-4949 9024 Int. 105", "Trámites y Servicios"=>"<a href=\"http://www.buenosaires.gob.ar/comuna-4/sede-comunal-4\" target=\"_blank\">link</a>"}
+```
 
 ## Development
 
