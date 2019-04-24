@@ -24,7 +24,7 @@ module Epok
     private
 
     def object
-      API.object(id)
+      @object ||= API.object(id)
     end
   end
 end
