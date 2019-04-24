@@ -3,7 +3,7 @@ require "json"
 
 module Epok
   class API
-    BASE_URL = "epok.buenosaires.gob.ar"
+    BASE_URL = "epok.buenosaires.gob.ar".freeze
 
     def self.object(id)
       response = Net::HTTP.get_response(BASE_URL, "/getObjectContent/?id=#{id}")
