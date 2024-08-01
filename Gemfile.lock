@@ -21,8 +21,10 @@ GEM
       ruby-progressbar
     public_suffix (4.0.6)
     rake (13.0.6)
-    rexml (3.2.5)
+    rexml (3.3.3)
+      strscan
     ruby-progressbar (1.11.0)
+    strscan (3.1.0)
     vcr (4.0.0)
     webmock (3.14.0)
       addressable (>= 2.8.0)
