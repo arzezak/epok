@@ -18,6 +18,10 @@ module Epok
       assert_match "Línea D", result.name
     end
 
+    def test_that_geocoder_results_have_a_distance
+      assert_operator result.distance, :<, 500
+    end
+
     private
 
     def result

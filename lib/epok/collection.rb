@@ -13,7 +13,7 @@ module Epok
     private
 
     def objects
-      @objects ||= @fetch.call.map { |item| Object.new(item["id"]) }
+      @objects ||= @fetch.call.map { |item| Object.new(item) }
     end
   end
 end

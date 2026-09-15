@@ -14,6 +14,14 @@ module Epok
       assert_equal "BIBLIOTECA ANMAT", object.name
     end
 
+    def test_that_an_object_has_a_kind
+      assert_equal "Dependencias Culturales", object.kind
+    end
+
+    def test_that_an_object_has_a_category
+      assert_equal "dependencias_culturales", object.category
+    end
+
     def test_that_an_object_has_a_normalized_address
       assert_equal "DE MAYO AV. 869", object.normalized_address
     end
@@ -34,6 +42,27 @@ module Epok
       }
 
       assert_equal expected_content, object.content
+    end
+
+    def test_that_listing_attributes_do_not_fetch
+      object = Object.new(
+        "id" => "farmacias|1082",
+        "nombre" => "Farmacia en CERRITO 342 ",
+        "clase" => "Farmacia",
+        "distancia" => "112.31"
+      )
+
+      VCR.eject_cassette
+      VCR.turned_off do
+        assert_equal "Farmacia en CERRITO 342", object.name
+        assert_equal "Farmacia", object.kind
+        assert_equal "farmacias", object.category
+        assert_in_delta 112.31, object.distance
+      end
+    end
+
+    def test_that_an_object_built_from_an_id_has_no_distance
+      assert_nil object.distance
     end
 
     private
