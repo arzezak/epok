@@ -35,6 +35,10 @@ https://ws.usig.buenosaires.gob.ar/rest/).
 - `/reverseGeocoderLugares/` takes `srid` (default 4326) and `radio`
   (default 1 metre, hence our 500 default).
 - Unknown ids return `200 {}`, unknown categories return an empty list.
+  Some geocoder results point at ids with no record (6 of 20 pharmacies
+  near the Obelisco), so `content` can raise NotFound on a listed object.
+- Strings come back padded or double-spaced at random, in every endpoint.
+  `API.get` normalizes all of them once; nothing else should strip.
 - Object coordinates are projected (Gauss-Krüger Buenos Aires). USIG's
   `/rest/convertir_coordenadas` turns them into longitude and latitude.
 - `ws.usig.buenosaires.gob.ar/datos_utiles?x=&y=` answers with empty strings

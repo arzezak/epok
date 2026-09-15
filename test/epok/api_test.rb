@@ -58,6 +58,17 @@ module Epok
       assert_raises(Error) { Object.new("x|1").location }
     end
 
+    def test_that_strings_in_responses_are_normalized
+      stub_request(:get, /buscar/).to_return(status: 200, body: JSON.generate(
+        "instancias" => [{"id" => "x|1", "nombre" => "  LA NAVE  LIBROS ", "clase" => " Libreria "}]
+      ))
+
+      result = Epok.search("x").first
+
+      assert_equal "LA NAVE LIBROS", result.name
+      assert_equal "Libreria", result.kind
+    end
+
     def test_that_not_found_is_an_error
       assert_operator NotFound, :<, Error
     end

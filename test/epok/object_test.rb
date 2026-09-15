@@ -55,7 +55,7 @@ module Epok
     def test_that_listing_attributes_do_not_fetch
       object = Object.new(
         "id" => "farmacias|1082",
-        "nombre" => "Farmacia en CERRITO 342 ",
+        "nombre" => "Farmacia en CERRITO 342",
         "clase" => "Farmacia",
         "distancia" => "112.31"
       )

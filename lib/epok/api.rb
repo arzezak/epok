@@ -67,10 +67,22 @@ module Epok
         raise Error, "EPOk responded #{response.code} to #{uri}"
       end
 
-      JSON.parse(response.body)
+      normalize(JSON.parse(response.body))
     rescue SystemCallError, SocketError, Timeout::Error, OpenSSL::SSL::SSLError, JSON::ParserError => e
       raise Error, "#{e.class}: #{e.message}"
     end
     private_class_method :get
+
+    # The API pads and double-spaces strings at random. Clean every string
+    # in a response once, here, so no field needs its own strip.
+    def self.normalize(value)
+      case value
+      when Hash then value.transform_values { |v| normalize(v) }
+      when Array then value.map { |v| normalize(v) }
+      when String then value.strip.squeeze(" ")
+      else value
+      end
+    end
+    private_class_method :normalize
   end
 end

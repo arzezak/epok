@@ -47,8 +47,8 @@ module Epok
 
     DatosUtiles.new(
       DatosUtiles.members.to_h do |member|
-        value = datos[member.to_s].to_s.strip.squeeze(" ")
-        [member, value.empty? ? nil : value]
+        value = datos[member.to_s]
+        [member, value.to_s.empty? ? nil : value]
       end
     )
   end

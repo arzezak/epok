@@ -9,7 +9,7 @@ module Epok
       attributes = { "id" => attributes } if attributes.is_a?(String)
 
       @id = attributes.fetch("id")
-      @name = attributes["nombre"]&.strip
+      @name = attributes["nombre"]
       @kind = attributes["clase"]
       @distance = attributes["distancia"]&.to_f
     end
@@ -46,7 +46,6 @@ module Epok
     def content
       object["contenido"].each_with_object({}) do |entry, hash|
         name, value = entry.values_at("nombre", "valor")
-        value = value.strip
         hash[name] = value unless value.empty?
       end
     end
