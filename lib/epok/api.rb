@@ -9,6 +9,7 @@ module Epok
     BASE_URL = "https://epok.buenosaires.gob.ar".freeze
     USIG_URL = "https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas".freeze
     DATOS_UTILES_URL = "https://ws.usig.buenosaires.gob.ar/datos_utiles".freeze
+    NORMALIZAR_URL = "https://servicios.usig.buenosaires.gob.ar/normalizar/".freeze
     TIMEOUT = 10
 
     def self.object(id)
@@ -31,6 +32,14 @@ module Epok
 
     def self.categories
       get("/getCategorias/", {})["categorias"]
+    end
+
+    def self.geocode(text)
+      response = get(NORMALIZAR_URL, direccion: text, geocodificar: true)
+      addresses = response["direccionesNormalizadas"]
+      raise NotFound, response["errorMessage"] if addresses.empty?
+
+      addresses
     end
 
     def self.datos_utiles(x, y)

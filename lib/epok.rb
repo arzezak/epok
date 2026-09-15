@@ -13,6 +13,8 @@ module Epok
     keyword_init: true
   )
 
+  Address = Struct.new(:address, :partido, :localidad, :location, keyword_init: true)
+
   DEFAULT_RADIUS = 500
 
   def self.search(query, categories: nil, limit: nil)
@@ -25,6 +27,19 @@ module Epok
     categories = Array(categories).join(",")
 
     Collection.new { API.geocoder(location.x, location.y, categories, radius) }
+  end
+
+  def self.geocode(text)
+    API.geocode(text).map do |address|
+      x, y = address["coordenadas"].values_at("x", "y").map(&:to_f)
+
+      Address.new(
+        address: address["direccion"],
+        partido: address["nombre_partido"],
+        localidad: address["nombre_localidad"],
+        location: Location.new(x: x, y: y)
+      )
+    end
   end
 
   def self.datos_utiles(location)

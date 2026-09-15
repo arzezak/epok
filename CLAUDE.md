@@ -39,8 +39,9 @@ https://ws.usig.buenosaires.gob.ar/rest/).
   `/rest/convertir_coordenadas` turns them into longitude and latitude.
 - `ws.usig.buenosaires.gob.ar/datos_utiles?x=&y=` answers with empty strings
   outside the city; `Epok.datos_utiles` turns those into nil.
-- Not wrapped yet:
-  `servicios.usig.buenosaires.gob.ar/normalizar/?direccion=&geocodificar=true`
-  (address to lat/lng).
+- `servicios.usig.buenosaires.gob.ar/normalizar/?direccion=&geocodificar=true`
+  matches across the whole AMBA, CABA first. Coordinates come back as
+  strings for CABA and floats elsewhere. No match is `200` with an empty
+  list and an `errorMessage`; `Epok.geocode` raises NotFound with it.
 - A December 2025 city report says "API USIG" is being replaced by
   "API Servicios Geo" during 2026. The USIG hosts above may move.

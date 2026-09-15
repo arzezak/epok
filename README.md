@@ -58,6 +58,13 @@ The geocoder takes one category or an array. The full list, with ids and display
 => #<struct Epok::Category id="academias_de_espanol", name="Academias de Español", description="">
 ```
 
+Typed addresses become locations through the city's USIG normalizer. Every match is returned, across the whole metro area, so the first one is usually the city's:
+
+```ruby
+>> Epok.geocode("callao y corrientes").first
+=> #<struct Epok::Address address="CALLAO AV. y CORRIENTES AV., CABA", partido="CABA", localidad="CABA", location=#<struct Epok::Location x=-58.392293, y=-34.604434>>
+```
+
 To know where a location is, `Epok.datos_utiles` asks the city's USIG service for the neighbourhood, comuna, police precinct, hospital area, and school district. Outside the city those are nil and the AMBA partido and localidad are filled instead:
 
 ```ruby
