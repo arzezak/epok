@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.usig.buenosaires.gob.ar/datos_utiles?x=-58.38157&y=-34.603738
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 15 Sep 2026 18:35:09 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.2.6-1+lenny8
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '335'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"comuna":"Comuna 1","barrio":"San Nicolas","comisaria":"3","area_hospitalaria":"HTAL.
+        DR. J.M. RAMOS MEJ\u00cdA","region_sanitaria":"I (Este)","distrito_escolar":"Distrito
+        Escolar   I","comisaria_vecinal":"1B","seccion_catastral":"05","distrito_economico":"","codigo_de_planeamiento_urbano":"C1","partido_amba":"","localidad_amba":""}'
+  recorded_at: Tue, 15 Sep 2026 18:35:09 GMT
+- request:
+    method: get
+    uri: https://ws.usig.buenosaires.gob.ar/datos_utiles?x=-58.6&y=-34.6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 15 Sep 2026 20:13:18 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.2.6-1+lenny8
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '303'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"comuna":"","barrio":"","comisaria":"","area_hospitalaria":"","region_sanitaria":"","distrito_escolar":"","comisaria_vecinal":"","seccion_catastral":"","distrito_economico":"","codigo_de_planeamiento_urbano":"","partido_amba":"Tres
+        de Febrero","localidad_amba":"Ciudad Jard\u00edn Lomas de El Palomar"}'
+  recorded_at: Tue, 15 Sep 2026 18:35:10 GMT
+recorded_with: VCR 6.4.0

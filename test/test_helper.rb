@@ -9,5 +9,8 @@ require "vcr"
 VCR.configure do |config|
   config.cassette_library_dir = "test/fixtures"
   config.hook_into :webmock
-  config.default_cassette_options = { record: :new_episodes }
+  # Cassettes are committed. Locally, new requests get appended so a test
+  # can be added or changed; on CI nothing may touch the network.
+  config.default_cassette_options = { record: ENV["CI"] ? :none : :new_episodes }
+  config.before_record { |interaction| interaction.response.headers.delete("Set-Cookie") }
 end

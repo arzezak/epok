@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/getObjectContent/?id=dependencias_culturales%7C1635
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:06 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '2434'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:06 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"contenido": [{"nombreId": "nombre", "nombre": "Nombre", "posicion":
+        "1", "valor": "BIBLIOTECA ANMAT "}, {"nombreId": "_categoria", "nombre": "Categoria",
+        "posicion": "2", "valor": "BIBLIOTECA"}, {"nombreId": "_subcategoria", "nombre":
+        "Subcategoria", "posicion": "3", "valor": "ESPECIALIZADA GUBERNAMENTAL"},
+        {"nombreId": "actividades secundarias", "nombre": "Actividades Secundarias",
+        "posicion": "4", "valor": ""}, {"nombreId": "ventaonline", "nombre": "Venta
+        Online", "posicion": "5", "valor": ""}, {"nombreId": "ventatelefonica", "nombre":
+        "Venta Telef\u00f3nica", "posicion": "6", "valor": ""}, {"nombreId": "telefonos",
+        "nombre": "Tel\u00e9fonos", "posicion": "7", "valor": "54.011 4340-0800 INT.
+        1047 FAX 54.011 4340-0800 INT. 1048"}, {"nombreId": "email", "nombre": "E-Mail",
+        "posicion": "8", "valor": "<a href=\"mailto:contacto@example.com\">contacto@example.com</a>"},
+        {"nombreId": "pagina_web", "nombre": "P\u00e1gina WEB", "posicion": "9", "valor":
+        "<a href=\"http://WWW.ANMAT.GOV.AR\" target=\"_blank\">WWW.ANMAT.GOV.AR</a>"},
+        {"nombreId": "redes_sociales", "nombre": "Redes Sociales", "posicion": "10",
+        "valor": ""}, {"nombreId": "dependencia", "nombre": "Dependencia", "posicion":
+        "11", "valor": "ADMINISTRACION NACIONAL DE MEDICAMENTOS Y TECNOLOGIA MEDICA
+        ANMAT"}, {"nombreId": "sector", "nombre": "Sector", "posicion": "12", "valor":
+        "PUBLICO"}, {"nombreId": "tematica", "nombre": "Tematica", "posicion": "13",
+        "valor": ""}, {"nombreId": "dias_semana", "nombre": "Atenci\u00f3n", "posicion":
+        "14", "valor": ""}, {"nombreId": "_nuevos_usa", "nombre": "Tipo de Libros",
+        "posicion": "15", "valor": ""}, {"nombreId": "direccion", "nombre": "Direcci\u00f3n",
+        "posicion": "16", "valor": "DE MAYO AV. 869"}, {"nombreId": "barrio", "nombre":
+        "Barrio", "posicion": "17", "valor": "MONSERRAT"}, {"nombreId": "comuna",
+        "nombre": "Comuna", "posicion": "18", "valor": "Comuna 1"}, {"nombreId": "observaciones",
+        "nombre": "Observaciones", "posicion": "19", "valor": ""}], "fechaAlta": "2022-01-04",
+        "ubicacion": {"centroide": "POINT (107754.844597 102260.035915)", "tipo":
+        "Punto"}, "fechaUltimaModificacion": "2022-01-04", "id": "dependencias_culturales|1635",
+        "direccionNormalizada": "DE MAYO AV. 869", "fechaActualizacion": "Septiembre
+        2012", "fuente": "Subsecretar\u00eda de Patrimonio Cultural (SSPCULT) del
+        Ministerio de Cultura", "claseId": "dependencias_culturales", "clase": "Dependencias
+        Culturales", "idForaneo": "-1"}'
+  recorded_at: Tue, 15 Sep 2026 18:35:06 GMT
+- request:
+    method: get
+    uri: https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas?output=lonlat&x=107754.844597&y=102260.035915
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 15 Sep 2026 20:13:15 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.2.6-1+lenny8
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '71'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"tipo_resultado":"Ok","resultado":{"x":"-58.378755","y":"-34.608867"}}'
+  recorded_at: Tue, 15 Sep 2026 18:35:06 GMT
+recorded_with: VCR 6.4.0

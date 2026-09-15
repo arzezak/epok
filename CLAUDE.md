@@ -11,7 +11,15 @@ bundle exec rake test     # records VCR cassettes into test/fixtures on first ru
 bundle exec swarf lib/    # complexity vs. coverage report, worst first
 ```
 
-Cassettes are gitignored, so the first test run hits the live API.
+VCR cassettes in `test/fixtures` are committed, so the suite runs offline.
+Locally VCR appends new requests to an existing cassette, so a new or
+changed test records on its first run; review the cassette diff before
+committing it. On CI (`CI` set) no request may touch the network. To
+re-record a cassette against the live API, delete it and run the tests.
+
+CI runs the suite on Ruby 3.4 and 4.0 (`.github/workflows/test.yml`).
+Older Rubies are held back by swarf, which needs 3.4.
+
 The API rejects curl's default User-Agent, but Ruby's Net::HTTP works fine.
 
 ## API notes

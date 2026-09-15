@@ -1,0 +1,301 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/reverseGeocoderLugares/?categorias=estaciones_de_subte&radio=500&x=-58.38157&y=-34.603738
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:04 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '1169'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:04 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalFull": 5, "instancias": [{"headline": "TRIBUNALES - TEATRO COL\u00d3N
+        (L\u00ednea D)", "nombre": "TRIBUNALES - TEATRO COL\u00d3N (L\u00ednea D)",
+        "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte (Metro)",
+        "id": "estaciones_de_subte|8", "distancia": "405.68"}, {"headline": "LAVALLE
+        (L\u00ednea C)", "nombre": "LAVALLE (L\u00ednea C)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|14",
+        "distancia": "381.54"}, {"headline": "C. PELLEGRINI (L\u00ednea B)", "nombre":
+        "C. PELLEGRINI (L\u00ednea B)", "claseId": "estaciones_de_subte|1", "clase":
+        "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|21", "distancia":
+        "78.90"}, {"headline": "DIAGONAL NORTE (L\u00ednea C)", "nombre": "DIAGONAL
+        NORTE (L\u00ednea C)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n
+        de Subte (Metro)", "id": "estaciones_de_subte|15", "distancia": "223.40"},
+        {"headline": "9 DE JULIO (L\u00ednea D)", "nombre": "9 DE JULIO (L\u00ednea
+        D)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte
+        (Metro)", "id": "estaciones_de_subte|6", "distancia": "106.92"}], "total":
+        5}'
+  recorded_at: Tue, 15 Sep 2026 18:35:04 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/reverseGeocoderLugares/?categorias=estaciones_de_subte,farmacias&radio=500&x=-58.38157&y=-34.603738
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:04 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '4699'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:04 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalFull": 24, "instancias": [{"headline": "Farmacia en CERRITO
+        342", "nombre": "Farmacia en CERRITO 342", "claseId": "farmacias|1", "clase":
+        "Farmacia", "id": "farmacias|1082", "distancia": "112.31"}, {"headline": "Farmacia
+        en PELLEGRINI, CARLOS 765", "nombre": "Farmacia en PELLEGRINI, CARLOS 765",
+        "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|1280", "distancia":
+        "479.31"}, {"headline": "Farmacia en URUGUAY AV. 479", "nombre": "Farmacia
+        en URUGUAY AV. 479", "claseId": "farmacias|1", "clase": "Farmacia", "id":
+        "farmacias|1170", "distancia": "447.32"}, {"headline": "TRIBUNALES - TEATRO
+        COL\u00d3N (L\u00ednea D)", "nombre": "TRIBUNALES - TEATRO COL\u00d3N (L\u00ednea
+        D)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte
+        (Metro)", "id": "estaciones_de_subte|8", "distancia": "405.68"}, {"headline":
+        "Farmacia en MAIPU 501", "nombre": "Farmacia en MAIPU 501", "claseId": "farmacias|1",
+        "clase": "Farmacia", "id": "farmacias|1105", "distancia": "491.08"}, {"headline":
+        "Farmacia en PELLEGRINI, CARLOS 423", "nombre": "Farmacia en PELLEGRINI, CARLOS
+        423", "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|1043",
+        "distancia": "82.82"}, {"headline": "Farmacia en PELLEGRINI, CARLOS 559",
+        "nombre": "Farmacia en PELLEGRINI, CARLOS 559", "claseId": "farmacias|1",
+        "clase": "Farmacia", "id": "farmacias|1044", "distancia": "242.06"}, {"headline":
+        "Farmacia en TUCUMAN 918", "nombre": "Farmacia en TUCUMAN 918", "claseId":
+        "farmacias|1", "clase": "Farmacia", "id": "farmacias|1045", "distancia": "297.65"},
+        {"headline": "Farmacia en CORRIENTES AV. 901", "nombre": "Farmacia en CORRIENTES
+        AV. 901", "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|1047",
+        "distancia": "182.96"}, {"headline": "Farmacia en ESMERALDA 599", "nombre":
+        "Farmacia en ESMERALDA 599", "claseId": "farmacias|1", "clase": "Farmacia",
+        "id": "farmacias|1049", "distancia": "416.49"}, {"headline": "Farmacia en
+        CORRIENTES AV. 1145", "nombre": "Farmacia en CORRIENTES AV. 1145", "claseId":
+        "farmacias|1", "clase": "Farmacia", "id": "farmacias|1012", "distancia": "123.46"},
+        {"headline": "Farmacia en LAVALLE 1118", "nombre": "Farmacia en LAVALLE 1118",
+        "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|786", "distancia":
+        "142.09"}, {"headline": "Farmacia en SAENZ PE\u00d1A, ROQUE, PRES. AV. 910",
+        "nombre": "Farmacia en SAENZ PE\u00d1A, ROQUE, PRES. AV. 910", "claseId":
+        "farmacias|1", "clase": "Farmacia", "id": "farmacias|909", "distancia": "227.99"},
+        {"headline": "Farmacia en CORRIENTES AV. 1236", "nombre": "Farmacia en CORRIENTES
+        AV. 1236", "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|913",
+        "distancia": "244.04"}, {"headline": "Farmacia en LAVALLE 919", "nombre":
+        "Farmacia en LAVALLE 919", "claseId": "farmacias|1", "clase": "Farmacia",
+        "id": "farmacias|886", "distancia": "225.09"}, {"headline": "Farmacia en PERON,
+        JUAN DOMINGO, TTE. GENERAL 1379", "nombre": "Farmacia en PERON, JUAN DOMINGO,
+        TTE. GENERAL 1379", "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|806",
+        "distancia": "497.99"}, {"headline": "Farmacia en MITRE, BARTOLOME 1177",
+        "nombre": "Farmacia en MITRE, BARTOLOME 1177", "claseId": "farmacias|1", "clase":
+        "Farmacia", "id": "farmacias|811", "distancia": "416.13"}, {"headline": "Farmacia
+        en LAVALLE 1127", "nombre": "Farmacia en LAVALLE 1127", "claseId": "farmacias|1",
+        "clase": "Farmacia", "id": "farmacias|724", "distancia": "185.39"}, {"headline":
+        "Farmacia en CORRIENTES AV. 702", "nombre": "Farmacia en CORRIENTES AV. 702",
+        "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|731", "distancia":
+        "440.40"}, {"headline": "Farmacia en SARMIENTO 1302", "nombre": "Farmacia
+        en SARMIENTO 1302", "claseId": "farmacias|1", "clase": "Farmacia", "id": "farmacias|290",
+        "distancia": "371.78"}, {"headline": "LAVALLE (L\u00ednea C)", "nombre": "LAVALLE
+        (L\u00ednea C)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n
+        de Subte (Metro)", "id": "estaciones_de_subte|14", "distancia": "381.54"},
+        {"headline": "C. PELLEGRINI (L\u00ednea B)", "nombre": "C. PELLEGRINI (L\u00ednea
+        B)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte
+        (Metro)", "id": "estaciones_de_subte|21", "distancia": "78.90"}, {"headline":
+        "DIAGONAL NORTE (L\u00ednea C)", "nombre": "DIAGONAL NORTE (L\u00ednea C)",
+        "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte (Metro)",
+        "id": "estaciones_de_subte|15", "distancia": "223.40"}, {"headline": "9 DE
+        JULIO (L\u00ednea D)", "nombre": "9 DE JULIO (L\u00ednea D)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|6",
+        "distancia": "106.92"}], "total": 24}'
+  recorded_at: Tue, 15 Sep 2026 18:35:04 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/reverseGeocoderLugares/?categorias=estaciones_de_subte&radio=100&x=-58.38157&y=-34.603738
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:05 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '265'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:05 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalFull": 1, "instancias": [{"headline": "C. PELLEGRINI (L\u00ednea
+        B)", "nombre": "C. PELLEGRINI (L\u00ednea B)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|21",
+        "distancia": "78.90"}], "total": 1}'
+  recorded_at: Tue, 15 Sep 2026 18:35:05 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/reverseGeocoderLugares/?categorias=estaciones_de_subte&radio=1000&x=-58.38157&y=-34.603738
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:05 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '3539'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:05 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"totalFull": 16, "instancias": [{"headline": "SAENZ PE\u00d1A (L\u00ednea
+        A)", "nombre": "SAENZ PE\u00d1A (L\u00ednea A)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|34",
+        "distancia": "790.32"}, {"headline": "TRIBUNALES - TEATRO COL\u00d3N (L\u00ednea
+        D)", "nombre": "TRIBUNALES - TEATRO COL\u00d3N (L\u00ednea D)", "claseId":
+        "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte (Metro)", "id":
+        "estaciones_de_subte|8", "distancia": "405.68"}, {"headline": "URUGUAY (L\u00ednea
+        B)", "nombre": "URUGUAY (L\u00ednea B)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|22",
+        "distancia": "527.05"}, {"headline": "LAVALLE (L\u00ednea C)", "nombre": "LAVALLE
+        (L\u00ednea C)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n
+        de Subte (Metro)", "id": "estaciones_de_subte|14", "distancia": "381.54"},
+        {"headline": "LIMA (L\u00ednea A)", "nombre": "LIMA (L\u00ednea A)", "claseId":
+        "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte (Metro)", "id":
+        "estaciones_de_subte|33", "distancia": "597.84"}, {"headline": "MORENO (L\u00ednea
+        C)", "nombre": "MORENO (L\u00ednea C)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|17",
+        "distancia": "990.28"}, {"headline": "PERU (L\u00ednea A)", "nombre": "PERU
+        (L\u00ednea A)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n
+        de Subte (Metro)", "id": "estaciones_de_subte|31", "distancia": "856.79"},
+        {"headline": "PIEDRAS (L\u00ednea A)", "nombre": "PIEDRAS (L\u00ednea A)",
+        "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte (Metro)",
+        "id": "estaciones_de_subte|32", "distancia": "614.23"}, {"headline": "BOLIVAR
+        (L\u00ednea E)", "nombre": "BOLIVAR (L\u00ednea E)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|44",
+        "distancia": "946.27"}, {"headline": "CALLAO - MAESTRO ALFREDO BRAVO (L\u00ednea
+        B)", "nombre": "CALLAO - MAESTRO ALFREDO BRAVO (L\u00ednea B)", "claseId":
+        "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte (Metro)", "id":
+        "estaciones_de_subte|23", "distancia": "988.76"}, {"headline": "CATEDRAL (L\u00ednea
+        D)", "nombre": "CATEDRAL (L\u00ednea D)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|69",
+        "distancia": "830.95"}, {"headline": "C. PELLEGRINI (L\u00ednea B)", "nombre":
+        "C. PELLEGRINI (L\u00ednea B)", "claseId": "estaciones_de_subte|1", "clase":
+        "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|21", "distancia":
+        "78.90"}, {"headline": "DIAGONAL NORTE (L\u00ednea C)", "nombre": "DIAGONAL
+        NORTE (L\u00ednea C)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n
+        de Subte (Metro)", "id": "estaciones_de_subte|15", "distancia": "223.40"},
+        {"headline": "AV. DE MAYO (L\u00ednea C)", "nombre": "AV. DE MAYO (L\u00ednea
+        C)", "claseId": "estaciones_de_subte|1", "clase": "Estaci\u00f3n de Subte
+        (Metro)", "id": "estaciones_de_subte|16", "distancia": "588.35"}, {"headline":
+        "FLORIDA (L\u00ednea B)", "nombre": "FLORIDA (L\u00ednea B)", "claseId": "estaciones_de_subte|1",
+        "clase": "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|20",
+        "distancia": "597.75"}, {"headline": "9 DE JULIO (L\u00ednea D)", "nombre":
+        "9 DE JULIO (L\u00ednea D)", "claseId": "estaciones_de_subte|1", "clase":
+        "Estaci\u00f3n de Subte (Metro)", "id": "estaciones_de_subte|6", "distancia":
+        "106.92"}], "total": 16}'
+  recorded_at: Tue, 15 Sep 2026 18:35:05 GMT
+recorded_with: VCR 6.4.0

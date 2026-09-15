@@ -1,0 +1,475 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/getCategorias/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:06 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '35278'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:06 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"categorias": [{"nombre": "Academias de Espa\u00f1ol", "nombre_normalizado":
+        "academias_de_espanol", "tipo_de_geometria": "POINT", "fuente": "Gerencia
+        de Comunicaci\u00f3n - Ente de Turismo", "fecha_de_relevamiento": "Julio de
+        2023", "descripcion": ""}, {"nombre": "Accesibilidad Establecimientos", "nombre_normalizado":
+        "accesibilidad_establecimientos", "tipo_de_geometria": "POINT", "fuente":
+        "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Actividades
+        para Chicos", "nombre_normalizado": "actividades_para_chicos", "tipo_de_geometria":
+        "POINT", "fuente": "Subsecretar\u00eda de Turismo", "fecha_de_relevamiento":
+        "Enero 2008", "descripcion": ""}, {"nombre": "Agencias de Viajes", "nombre_normalizado":
+        "agencias_de_viajes", "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda
+        de Turismo", "fecha_de_relevamiento": "Enero 2008", "descripcion": ""}, {"nombre":
+        "Alojamientos", "nombre_normalizado": "alojamientos", "tipo_de_geometria":
+        "POINT", "fuente": "Ente de Turismo", "fecha_de_relevamiento": "Julio 2023",
+        "descripcion": ""}, {"nombre": "Ancho de Veredas", "nombre_normalizado": "ancho_veredas",
+        "tipo_de_geometria": "VARIOS", "fuente": "", "fecha_de_relevamiento": "",
+        "descripcion": ""}, {"nombre": "Arbolado 2017-2018", "nombre_normalizado":
+        "arbolado_main", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Area de Equipo Territorial", "nombre_normalizado":
+        "area_de_equipo_territorial", "tipo_de_geometria": "POINT", "fuente": "",
+        "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Area de Responsabilidad
+        Territorial", "nombre_normalizado": "area_de_responsabilidad_territorial",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "BA Moda", "nombre_normalizado": "ba_modas", "tipo_de_geometria":
+        "POINT", "fuente": "DG de Distritos Econ\u00f3micos - Subsecretar\u00eda de
+        Desarrollo Econ\u00f3mico", "fecha_de_relevamiento": "Marzo 2019", "descripcion":
+        ""}, {"nombre": "Bancos", "nombre_normalizado": "bancos", "tipo_de_geometria":
+        "POINT", "fuente": "USIG - Agencia de Sistemas de Informaci\u00f3n - Gobierno
+        de la Ciudad Aut\u00f3noma de Buenos Aires", "fecha_de_relevamiento": "Junio
+        2009", "descripcion": ""}, {"nombre": "Bares Accesibles", "nombre_normalizado":
+        "bar_accesible", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Barrios", "nombre_normalizado": "barrios",
+        "tipo_de_geometria": "MULTIPOLYGON", "fuente": "USIG", "fecha_de_relevamiento":
+        "Junio 2009", "descripcion": ""}, {"nombre": "Cajeros Autom\u00e1ticos", "nombre_normalizado":
+        "cajeros_automaticos", "tipo_de_geometria": "POINT", "fuente": "Red Link -
+        Red Banelco - USIG", "fecha_de_relevamiento": "Enero 2011", "descripcion":
+        ""}, {"nombre": "Calistenia", "nombre_normalizado": "calistenia", "tipo_de_geometria":
+        "POINT", "fuente": "Sec de Gesti\u00f3n Comunal", "fecha_de_relevamiento":
+        "01/2026", "descripcion": ""}, {"nombre": "Campanas Verdes", "nombre_normalizado":
+        "campanas_verdes", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Canchas en espacios verdes", "nombre_normalizado":
+        "canchas_en_espacios_verdes", "tipo_de_geometria": "POINT", "fuente": "MAYEP",
+        "fecha_de_relevamiento": "", "descripcion": "Vista con las canchas de f\u00fatbol,
+        volley y b\u00e1squet para el Mapa Deportivo GCBA. La vista sale de la tabla
+        Oferta Deportiva de MAyep"}, {"nombre": "Carnicerias Saludables", "nombre_normalizado":
+        "carnicerias_saludables", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Casas de Provincia", "nombre_normalizado":
+        "casas_de_provincia", "tipo_de_geometria": "POINT", "fuente": "Ente de Turismo",
+        "fecha_de_relevamiento": "Octubre 2023", "descripcion": ""}, {"nombre": "Centros
+        Comerciales", "nombre_normalizado": "centros_comerciales", "tipo_de_geometria":
+        "POINT", "fuente": "Subsecretar\u00eda de Turismo", "fecha_de_relevamiento":
+        "Enero 2008", "descripcion": ""}, {"nombre": "Centros de atenci\u00f3n al
+        turista", "nombre_normalizado": "centros_de_informes", "tipo_de_geometria":
+        "POINT", "fuente": "Gerencia de Comunicaci\u00f3n - Ente de Turismo", "fecha_de_relevamiento":
+        "Octubre 2025", "descripcion": ""}, {"nombre": "Centros de Atencion Plan Sarmiento",
+        "nombre_normalizado": "centros_atencion_plan_sarmiento", "tipo_de_geometria":
+        "POINT", "fuente": "DGTEDU - Ministerio de Educaci\u00f3n", "fecha_de_relevamiento":
+        "enero 2019", "descripcion": ""}, {"nombre": "Centros de integraci\u00f3n
+        laboral", "nombre_normalizado": "centros_integracion_laboral", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "Marzo 2017", "descripcion":
+        ""}, {"nombre": "Centros de Recreaci\u00f3n", "nombre_normalizado": "centros_de_recreacion",
+        "tipo_de_geometria": "POINT", "fuente": "USIG", "fecha_de_relevamiento": "Noviembre
+        2007", "descripcion": ""}, {"nombre": "Centros de Salud No Dependientes del
+        GCBA", "nombre_normalizado": "centros_de_salud_no_dependientes_del_gcba",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "Abril
+        2020", "descripcion": ""}, {"nombre": "Centros de Salud y Acci\u00f3n Comunitaria",
+        "nombre_normalizado": "centros_de_salud_y_accion_comunitaria", "tipo_de_geometria":
+        "POINT", "fuente": "Ministerio de Salud", "fecha_de_relevamiento": "Septiembre
+        2019", "descripcion": ""}, {"nombre": " Centros Educativos Complementarios
+        de Idiomas Extranjeros", "nombre_normalizado": "cecie", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Centros M\u00e9dicos Barriales", "nombre_normalizado": "centros_medicos_barriales",
+        "tipo_de_geometria": "POINT", "fuente": "Ministerio de Salud", "fecha_de_relevamiento":
+        "Febrero 2020", "descripcion": ""}, {"nombre": "Centros Vacunatorios", "nombre_normalizado":
+        "centros_vacunatorios", "tipo_de_geometria": "POINT", "fuente": "Prensa y
+        Comunicaci\u00f3n - Ministerio de Salud", "fecha_de_relevamiento": "Junio
+        2020", "descripcion": ""}, {"nombre": "Clubes de Barrio", "nombre_normalizado":
+        "clubes_de_barrio", "tipo_de_geometria": "POINT", "fuente": "Gerencia Operativa
+        de Clubes de Barrio y Federaciones Deportivas - Subsecretar\u00eda de Deportes",
+        "fecha_de_relevamiento": "Agosto 2012", "descripcion": ""}, {"nombre": "Clubes
+        de Jazz", "nombre_normalizado": "clubes_de_jazz", "tipo_de_geometria": "POINT",
+        "fuente": "Subsecretar\u00eda de Turismo", "fecha_de_relevamiento": "Julio
+        2007", "descripcion": ""}, {"nombre": "Colectividades", "nombre_normalizado":
+        "colectividades", "tipo_de_geometria": "POINT", "fuente": "DG. Relaciones
+        Institucionales", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Colectivos", "nombre_normalizado": "colectivos", "tipo_de_geometria": "MULTILINESTRING",
+        "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Comisar\u00edas", "nombre_normalizado": "comisarias", "tipo_de_geometria":
+        "POINT", "fuente": "Superintendencia de Polic\u00eda Cient\u00edfica de la
+        Polic\u00eda Federal Argentina- Divisi\u00f3n Scopometria", "fecha_de_relevamiento":
+        "Septiembre 2017", "descripcion": ""}, {"nombre": "Compromiso Metrobus", "nombre_normalizado":
+        "compromiso_metrobus", "tipo_de_geometria": "MULTILINESTRING", "fuente": "",
+        "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Compromisos Salud",
+        "nombre_normalizado": "compromisos_salud", "tipo_de_geometria": "POINT", "fuente":
+        "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Comunas",
+        "nombre_normalizado": "comunas", "tipo_de_geometria": "MULTIPOLYGON", "fuente":
+        "USIG", "fecha_de_relevamiento": "Junio 2009", "descripcion": ""}, {"nombre":
+        "Comunas SSTrabajo", "nombre_normalizado": "comunas_sstrabajo", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "Marzo 2017", "descripcion":
+        ""}, {"nombre": "Concesiones", "nombre_normalizado": "concesiones", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "Dic 2016", "descripcion":
+        ""}, {"nombre": "Concesiones Zonas", "nombre_normalizado": "concesiones_zonas",
+        "tipo_de_geometria": "POLYGON", "fuente": "", "fecha_de_relevamiento": "Dic
+        2016", "descripcion": ""}, {"nombre": "Concursos Gastronomicos", "nombre_normalizado":
+        "concursos_gastronomicos", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Conjunto Urbano IVC", "nombre_normalizado":
+        "conjunto_urbano_ivc", "tipo_de_geometria": "MULTIPOLYGON", "fuente": "",
+        "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Consulados",
+        "nombre_normalizado": "consulados", "tipo_de_geometria": "POINT", "fuente":
+        "Direcci\u00f3n General de Relaciones Internacionales y Protocolo", "fecha_de_relevamiento":
+        "Marzo 2011", "descripcion": ""}, {"nombre": "Contenedores Negros", "nombre_normalizado":
+        "contenedores_negros", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Contenedores Verdes", "nombre_normalizado":
+        "contenedores_verdes", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Cuarteles de Bomberos", "nombre_normalizado":
+        "cuarteles_de_bomberos", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "CUC Establecimientos Educativos", "nombre_normalizado":
+        "cuc_establecimientos_educativos", "tipo_de_geometria": "POINT", "fuente":
+        "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Culturas
+        Independientes", "nombre_normalizado": "culturas_independientes", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Departamentos Comisarias Comunales", "nombre_normalizado": "departamentos_comisarias_comunales",
+        "tipo_de_geometria": "MULTIPOLYGON", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Dependencias Culturales", "nombre_normalizado":
+        "dependencias_culturales", "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda
+        de Patrimonio Cultural (SSPCULT) del Ministerio de Cultura", "fecha_de_relevamiento":
+        "Septiembre 2012", "descripcion": ""}, {"nombre": "Dependencias y Sedes del
+        Ministerio P\u00fablico Fiscal", "nombre_normalizado": "fiscalias", "tipo_de_geometria":
+        "POINT", "fuente": "Ministerio P\u00fablico Fiscal CABA", "fecha_de_relevamiento":
+        "2019", "descripcion": "Localizaci\u00f3n de las dependencias y sedes del
+        Ministerio P\u00fablico Fiscal (MPF)"}, {"nombre": "DescubrirBA", "nombre_normalizado":
+        "descubrir_ba", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Discotecas", "nombre_normalizado": "discotecas",
+        "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda de Turismo", "fecha_de_relevamiento":
+        "Julio 2007", "descripcion": ""}, {"nombre": "Distritos Escolares", "nombre_normalizado":
+        "distritos_escolares", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Diversidad Areas Gobierno", "nombre_normalizado":
+        "diversidad_areas_gobierno", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Diversidad Empresas Sector Privado", "nombre_normalizado":
+        "diversidad_empresas_sector_privado", "tipo_de_geometria": "POINT", "fuente":
+        "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Diversidad
+        Teatros Museos Culturales", "nombre_normalizado": "diversidad_teatros_museos_culturales",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Edificio con Qr", "nombre_normalizado": "edificio_con_qr",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Educacion inicial comun especial estatal", "nombre_normalizado":
+        "educacion_inicial_comun_especial_estatal", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""},
+        {"nombre": "Educacion inicial comun especial privado", "nombre_normalizado":
+        "educacion_inicial_comun_especial_privado", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""},
+        {"nombre": "Educacion primario comun especial estatal", "nombre_normalizado":
+        "educacion_primario_comun_especial_estatal", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""},
+        {"nombre": "Educacion primario comun especial privado", "nombre_normalizado":
+        "educacion_primario_comun_especial_privado", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""},
+        {"nombre": "Educacion secundario comun especial estatal", "nombre_normalizado":
+        "educacion_secundario_comun_especial_estatal", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""},
+        {"nombre": "Educacion secundario comun especial privado", "nombre_normalizado":
+        "educacion_secundario_comun_especial_privado", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""},
+        {"nombre": "Elecciones Limpias", "nombre_normalizado": "elecciones_limpias",
+        "tipo_de_geometria": "POINT", "fuente": "MEPHU", "fecha_de_relevamiento":
+        "", "descripcion": "Datos del Proyecto Ciudad Limpia que consta de relevamientos
+        por calle de la carteler\u00eda pol\u00edtica en per\u00edodo de campa\u00f1a
+        electoral."}, {"nombre": "Embajadas", "nombre_normalizado": "embajadas", "tipo_de_geometria":
+        "POINT", "fuente": "Direcci\u00f3n General de Relaciones Internacionales y
+        Protocolo", "fecha_de_relevamiento": "Marzo 2011", "descripcion": ""}, {"nombre":
+        "Emisiones Gaseosas", "nombre_normalizado": "emisiones_gaseosas", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "Nov 2016", "descripcion":
+        ""}, {"nombre": "Empleos del Futuro Sedes", "nombre_normalizado": "empleos_del_futuro_sedes",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Empleos del Futuro Sedes Custom", "nombre_normalizado": "empleos_del_futuro_sedes_custom",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Empleos del Futuro Talleres", "nombre_normalizado": "empleos_del_futuro_talleres",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Empresas Sector Privado Locales", "nombre_normalizado": "diversidad_empresas_sector_privado_locales",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": " Encuentro con Ciencia Talleres", "nombre_normalizado": "encuentro_con_ciencia_talleres",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Equipamiento", "nombre_normalizado": "equipamiento", "tipo_de_geometria":
+        "POINT", "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Escuelas verdes educaci\u00f3n", "nombre_normalizado": "educacion_escuelas_verdes",
+        "tipo_de_geometria": "POINT", "fuente": "Escuelas Verdes", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Espacios BA", "nombre_normalizado": "espacios_ba",
+        "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda de Coordinaci\u00f3n
+        y Promoci\u00f3n de Eventos - Jefatura de Gabinete", "fecha_de_relevamiento":
+        "Abril 2025", "descripcion": "Cat\u00e1logo de los espacios de la Ciudad que
+        tienen tarifa de alquiler, y pueden ser alquilados para eventos."}, {"nombre":
+        "Espacios Familiares", "nombre_normalizado": "espacios_familiares", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "Nov 2016", "descripcion":
+        ""}, {"nombre": "Espacios Verdes Privados", "nombre_normalizado": "espacios_verdes_privados",
+        "tipo_de_geometria": "MULTIPOLYGON", "fuente": "GO Explotaci\u00f3n de Datos
+        Geoespaciales", "fecha_de_relevamiento": "Octubre 2025", "descripcion": ""},
+        {"nombre": "Espacios Verdes P\u00fablicos", "nombre_normalizado": "espacios_verdes_publicos",
+        "tipo_de_geometria": "MULTIPOLYGON", "fuente": "GO Explotaci\u00f3n de Datos
+        Geoespaciales", "fecha_de_relevamiento": "Octubre 2025", "descripcion": ""},
+        {"nombre": "Establecimientos Educativos de Gesti\u00f3n Estatal", "nombre_normalizado":
+        "establecimientos_educativos_de_gestion_estatal", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar, Coordinaci\u00f3n Gral. de Informaci\u00f3n y Estad\u00edstica
+        Educativa, UEICEE. MEGCBA.", "fecha_de_relevamiento": "Diciembre 2019", "descripcion":
+        ""}, {"nombre": "Establecimientos Educativos de Gesti\u00f3n Privada", "nombre_normalizado":
+        "establecimientos_educativos_de_gestion_privada", "tipo_de_geometria": "POINT",
+        "fuente": "Mapa Escolar, Coordinaci\u00f3n Gral. de Informaci\u00f3n y Estad\u00edstica
+        Educativa, UEICEE. MEGCBA.", "fecha_de_relevamiento": "Diciembre 2019", "descripcion":
+        ""}, {"nombre": "Estaciones de Bicicletas", "nombre_normalizado": "estaciones_de_bicicletas",
+        "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda de Transporte
+        - Jefatura de Gabinete de Ministros", "fecha_de_relevamiento": "Octubre 2025",
+        "descripcion": ""}, {"nombre": "Estaciones de Ferrocarril", "nombre_normalizado":
+        "estaciones_de_ferrocarril", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Estaciones de ferrocarril CABA", "nombre_normalizado":
+        "estaciones_de_ferrocarril_caba", "tipo_de_geometria": "POINT", "fuente":
+        "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Estaciones
+        de Metrobus", "nombre_normalizado": "estaciones_de_metrobus", "tipo_de_geometria":
+        "POINT", "fuente": "USIG - Agencia de Sistemas de Informaci\u00f3n - Gobierno
+        de la Ciudad Aut\u00f3noma de Buenos Aires", "fecha_de_relevamiento": "Enero
+        de 2026", "descripcion": ""}, {"nombre": "Estaciones de Premetro", "nombre_normalizado":
+        "estaciones_de_premetro", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Estaciones de Servicio", "nombre_normalizado":
+        "estaciones_de_servicio", "tipo_de_geometria": "POINT", "fuente": "Secretar\u00eda
+        de Energ\u00eda de la Naci\u00f3n", "fecha_de_relevamiento": "24/05/2016",
+        "descripcion": ""}, {"nombre": "Estaciones de Subte", "nombre_normalizado":
+        "estaciones_de_subte", "tipo_de_geometria": "POINT", "fuente": "Transporte",
+        "fecha_de_relevamiento": "Junio 2023", "descripcion": ""}, {"nombre": "Estaciones
+        Saludables", "nombre_normalizado": "estaciones_saludables", "tipo_de_geometria":
+        "POINT", "fuente": "Direcci\u00f3n General de Desarrollo Saludable -Vicejefatura
+        de Gobierno", "fecha_de_relevamiento": "noviembre 2018", "descripcion": "Las
+        estaciones saludables son puestos de prevenci\u00f3n de enfermedades y promoci\u00f3n
+        de la salud donde enfermeros y nutricionistas realizan controles b\u00e1sicos
+        de salud (medici\u00f3n del peso, talla, contorno de cintura, nivel de glucosa
+        en sangre, presi\u00f3n arterial) y consejer\u00eda en alimentaci\u00f3n saludable.
+        Se encuentran distribuidas principalmente en plazas y parques. Est\u00e1n
+        dispuestas para que todas las personas que circulan por la Ciudad puedan acceder
+        libre y gratuitamente. Adem\u00e1s, algunas de ellas cuentan con una variada
+        oferta de clases de yoga, gimnasia, caminatas aer\u00f3bicas, bicicleteadas,
+        actividades recreativas (baile, rollers), juegotecas l\u00fadico-educativas
+        para ni\u00f1os, actividades para adultos mayores, servicio de casilleros
+        y cambiadores."}, {"nombre": "Farmacias", "nombre_normalizado": "farmacias",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "Abril
+        2020", "descripcion": ""}, {"nombre": "Ferrocarril", "nombre_normalizado":
+        "ferrocarriles", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Festivales y Eventos", "nombre_normalizado":
+        "festivales_y_eventos", "tipo_de_geometria": "POINT", "fuente": "Direcci\u00f3n
+        General Planificaci\u00f3n y Vinculaci\u00f3n Estrat\u00e9gica de Eventos
+        - SS posicionamiento y Gesti\u00f3n de Eventos", "fecha_de_relevamiento":
+        "Septiembre y Octubre 2024", "descripcion": "Festivales y Eventos de la Ciudad
+        - Tech Week Octubre 2024"}, {"nombre": "FIABs", "nombre_normalizado": "fiabs",
+        "tipo_de_geometria": "POINT", "fuente": "Direcci\u00f3n General de Ferias
+        y Mercados", "fecha_de_relevamiento": "Mayo 2020", "descripcion": ""}, {"nombre":
+        "Filmaciones en la Ciudad", "nombre_normalizado": "filmaciones_en_la_ciudad",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Gastronom\u00eda", "nombre_normalizado": "gastronomia", "tipo_de_geometria":
+        "POINT", "fuente": "Subsecretar\u00eda de Turismo", "fecha_de_relevamiento":
+        "2004", "descripcion": ""}, {"nombre": "Hospitales de Ni\u00f1os", "nombre_normalizado":
+        "hospitales_de_ninos", "tipo_de_geometria": "POINT", "fuente": "DG de Relaciones
+        Inter-Institucionales - Ministerio de Salud", "fecha_de_relevamiento": "Mayo
+        2019", "descripcion": ""}, {"nombre": "Hospitales Especializados", "nombre_normalizado":
+        "hospitales_especializados", "tipo_de_geometria": "POINT", "fuente": "DG de
+        Relaciones Inter-Institucionales - Ministerio de Salud", "fecha_de_relevamiento":
+        "Mayo 2019", "descripcion": ""}, {"nombre": "Hospitales Generales de Agudos",
+        "nombre_normalizado": "hospitales_generales_de_agudos", "tipo_de_geometria":
+        "POINT", "fuente": "DG de Relaciones Inter-Institucionales - Ministerio de
+        Salud", "fecha_de_relevamiento": "Mayo 2022", "descripcion": ""}, {"nombre":
+        "Informacion Publica", "nombre_normalizado": "informacion_publica", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Instituciones Deportivas", "nombre_normalizado": "instituciones_deportivas",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Instituciones Educativas", "nombre_normalizado": "diversidad_instituciones_educativas",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Institutos de Formaci\u00f3n T\u00e9cnica Superior", "nombre_normalizado":
+        "institutos_de_formacion_tecnica_superior", "tipo_de_geometria": "POINT",
+        "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Islas Digitales", "nombre_normalizado": "islas_digitales", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "Noviembre 2024", "descripcion":
+        ""}, {"nombre": "Librerias Comunitarias", "nombre_normalizado": "librerias_comunitarias",
+        "tipo_de_geometria": "POINT", "fuente": "DG de Industrias Creativas, Audiovisuales
+        y Software - MDE", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Localidades AMBA", "nombre_normalizado": "localidades_amba", "tipo_de_geometria":
+        "MULTIPOLYGON", "fuente": "OSM", "fecha_de_relevamiento": "Junio 2015", "descripcion":
+        ""}, {"nombre": "Lugar Emblematico", "nombre_normalizado": "lugar_emblematico",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Lugares de Esparcimiento", "nombre_normalizado": "lugares_de_esparcimiento",
+        "tipo_de_geometria": "POINT", "fuente": "Ente de Turismo", "fecha_de_relevamiento":
+        "Julio 2023", "descripcion": ""}, {"nombre": "Lugares de pago BUI", "nombre_normalizado":
+        "lugares_de_pago_bui", "tipo_de_geometria": "POINT", "fuente": "Atencion Ciudadana",
+        "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Mapa de Bienestar",
+        "nombre_normalizado": "mapa_de_bienestar", "tipo_de_geometria": "POINT", "fuente":
+        "SSPM - MDHyH", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Mapa de Cuidados", "nombre_normalizado": "mapa_de_cuidados", "tipo_de_geometria":
+        "POINT", "fuente": "DGMUJER", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Milongas", "nombre_normalizado": "milongas", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Monumentos y obras de arte", "nombre_normalizado": "monumentos_y_obras_de_arte",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Obras Actualizadas", "nombre_normalizado": "obras_actualizadas",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Obras de Gobierno", "nombre_normalizado": "obras_de_gobierno",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Obras Urbanisticas Diana Cabeza", "nombre_normalizado": "obras_urbanisticas_diana_cabeza",
+        "tipo_de_geometria": "POINT", "fuente": "Mephu", "fecha_de_relevamiento":
+        "julio 2024", "descripcion": ""}, {"nombre": "Oficinas de Empleo", "nombre_normalizado":
+        "oficinas_de_empleo", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Otros Centros de Salud", "nombre_normalizado":
+        "otro_centro_de_salud", "tipo_de_geometria": "POINT", "fuente": "Prensa y
+        Comunicaci\u00f3n - Ministerio de Salud", "fecha_de_relevamiento": "Marzo
+        2024", "descripcion": ""}, {"nombre": "Paradas de Bus Tur\u00edstico", "nombre_normalizado":
+        "paradas_de_bus_turistico", "tipo_de_geometria": "POINT", "fuente": "Ente
+        de Turismo", "fecha_de_relevamiento": "Octubre 2025", "descripcion": ""},
+        {"nombre": "Parcelas ASAEs", "nombre_normalizado": "parcelas_asaes", "tipo_de_geometria":
+        "MULTIPOLYGON", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Partidos AMBA", "nombre_normalizado": "partidos_amba", "tipo_de_geometria":
+        "MULTIPOLYGON", "fuente": "OSM", "fecha_de_relevamiento": "Junio 2015", "descripcion":
+        ""}, {"nombre": "Paseo de la Historieta", "nombre_normalizado": "paseo_de_la_historieta",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Patios de Juegos", "nombre_normalizado": "patio_de_juego",
+        "tipo_de_geometria": "POINT", "fuente": "SS de Gesti\u00f3n Comunal", "fecha_de_relevamiento":
+        "2026", "descripcion": ""}, {"nombre": "Ping Pong", "nombre_normalizado":
+        "ping_pong", "tipo_de_geometria": "POINT", "fuente": "SS Gesti\u00f3n Comunal",
+        "fecha_de_relevamiento": "Julio 2026", "descripcion": "Ubicaci\u00f3n de Mesas
+        de Ping Pong como infraestructura de oferta deportiva"}, {"nombre": "Pistas
+        de Skate", "nombre_normalizado": "pistas_de_skate", "tipo_de_geometria": "POINT",
+        "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Plan Hidraulico", "nombre_normalizado": "plan_hidraulico", "tipo_de_geometria":
+        "MULTIPOLYGON", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Poblacion por centroide de radio censal", "nombre_normalizado":
+        "poblacion_x_centroide_radio_censal", "tipo_de_geometria": "POINT", "fuente":
+        "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Polideportivos", "nombre_normalizado": "polideportivos", "tipo_de_geometria":
+        "POINT", "fuente": "Subsecretar\u00eda de Deportes", "fecha_de_relevamiento":
+        "2025", "descripcion": ""}, {"nombre": "Pol\u00edgonos Navidad V\u00eda P\u00fablica",
+        "nombre_normalizado": "poligonos_navidad_via_publica", "tipo_de_geometria":
+        "POLYGON", "fuente": "Comunicaci\u00f3n de la\u00a0DG de Eventos Centrales
+        - Min de Cultura", "fecha_de_relevamiento": "Diciembre 2024", "descripcion":
+        "Zonas con emplazamiento de luminarias y acondicionamiento de Navidad en v\u00eda
+        p\u00fablica 2024"}, {"nombre": "Posta Aer\u00f3bica", "nombre_normalizado":
+        "posta_aerobica", "tipo_de_geometria": "POINT", "fuente": "Sec de Gesti\u00f3n
+        Comunal", "fecha_de_relevamiento": "01/2026", "descripcion": ""}, {"nombre":
+        "Programa Detectar", "nombre_normalizado": "programa_detectar", "tipo_de_geometria":
+        "POINT", "fuente": "Ministerio de Salud", "fecha_de_relevamiento": "Junio
+        2020", "descripcion": ""}, {"nombre": "Programas Ciudadanias Porte\u00f1as",
+        "nombre_normalizado": "programas_ciudadanias_portenias", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Programas Deportivos", "nombre_normalizado": "programas_deportivos", "tipo_de_geometria":
+        "POINT", "fuente": "Subsecretar\u00eda de Transporte", "fecha_de_relevamiento":
+        "2019", "descripcion": ""}, {"nombre": "Programas Tickets Sociales", "nombre_normalizado":
+        "programas_tickets_sociales", "tipo_de_geometria": "POINT", "fuente": "",
+        "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre": "Pubs", "nombre_normalizado":
+        "pubs", "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda de Turismo",
+        "fecha_de_relevamiento": "Noviembre 2007", "descripcion": ""}, {"nombre":
+        "Puesto de Recambio LED", "nombre_normalizado": "puestos_de_recambio_LED",
+        "tipo_de_geometria": "POINT", "fuente": "APRA", "fecha_de_relevamiento": "Diciembre
+        2019", "descripcion": ""}, {"nombre": "Punto de reuni\u00f3n", "nombre_normalizado":
+        "punto_de_reunion", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "Jul 2017", "descripcion": ""}, {"nombre": "Punto Fijo", "nombre_normalizado":
+        "punto_fijo", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Puntos Navidad V\u00eda P\u00fablica",
+        "nombre_normalizado": "puntos_navidad_via_publica", "tipo_de_geometria": "POINT",
+        "fuente": "Comunicaci\u00f3n de la\u00a0DG de Eventos Centrales - Min de Cultura",
+        "fecha_de_relevamiento": "Diciembre 2024", "descripcion": "Sitios con emplazamiento
+        de \u00e1rboles y pesebre de Navidad en v\u00eda p\u00fablica 2024"}, {"nombre":
+        "Puntos Verdes", "nombre_normalizado": "puntos_verdes", "tipo_de_geometria":
+        "POINT", "fuente": "DG de Limpieza", "fecha_de_relevamiento": "Julio 2024",
+        "descripcion": ""}, {"nombre": "Puntos WiFi", "nombre_normalizado": "puntos_wifi",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Recarga tus Botellas", "nombre_normalizado": "recarga_tus_botellas",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Recepcion de Residuos El\u00e9ctricos y Electr\u00f3nicos",
+        "nombre_normalizado": "recepcion_de_residuos_electricos_y_electronicos", "tipo_de_geometria":
+        "POINT", "fuente": "APRA", "fecha_de_relevamiento": "Septiembre 2025", "descripcion":
+        ""}, {"nombre": "Recuperadores Urbanos", "nombre_normalizado": "recuperadores_urbanos",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Refugios Clim\u00e1ticos", "nombre_normalizado": "refugios_climaticos",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Renabap", "nombre_normalizado": "renabap", "tipo_de_geometria":
+        "POINT", "fuente": "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Riesgo Punto", "nombre_normalizado": "riesgo_punto", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Riesgo Zona", "nombre_normalizado": "riesgo_zona", "tipo_de_geometria": "MULTIPOLYGON",
+        "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Salidas did\u00e1cticas", "nombre_normalizado": "educacion_salidas_didacticas",
+        "tipo_de_geometria": "POINT", "fuente": "Escuelas Verdes", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "sedes  ABASTO", "nombre_normalizado":
+        "sedes_ABASTO", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "Sedes de Comunas", "nombre_normalizado":
+        "sedes_de_comunas", "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento":
+        "", "descripcion": ""}, {"nombre": "sedes FIBA", "nombre_normalizado": "sedes_FIBA",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Semana de la Gastronomia", "nombre_normalizado": "semana_de_la_gastronomia",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Semana del Orgullo", "nombre_normalizado": "semana_orgullo",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Sensores", "nombre_normalizado": "sensores", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Servicios Sociales", "nombre_normalizado": "servicios_sociales", "tipo_de_geometria":
+        "POINT", "fuente": "Secretar\u00eda de Desarrollo Social - Subsecretar\u00eda
+        de la Gesti\u00f3n Social Comunitaria", "fecha_de_relevamiento": "2018", "descripcion":
+        ""}, {"nombre": "Sitios de Inter\u00e9s", "nombre_normalizado": "sitios_de_interes",
+        "tipo_de_geometria": "POINT", "fuente": "USIG", "fecha_de_relevamiento": "Diciembre
+        2007", "descripcion": ""}, {"nombre": "Techos Solares", "nombre_normalizado":
+        "techos_solares", "tipo_de_geometria": "POINT", "fuente": "APRA", "fecha_de_relevamiento":
+        "Agosto 2025", "descripcion": "Techos solares provistos por APRA actualizados
+        en EPOK a la fecha"}, {"nombre": "Terminales", "nombre_normalizado": "terminales",
+        "tipo_de_geometria": "POINT", "fuente": "Subsecretar\u00eda de Turismo", "fecha_de_relevamiento":
+        "Noviembre 2007", "descripcion": ""}, {"nombre": "Terminales de Autoconsulta",
+        "nombre_normalizado": "terminales_de_autoconsulta", "tipo_de_geometria": "POINT",
+        "fuente": "", "fecha_de_relevamiento": "Enero 2015", "descripcion": ""}, {"nombre":
+        "Testeos Masivos", "nombre_normalizado": "testeos_masivos", "tipo_de_geometria":
+        "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Tu mejor laburo m\u00f3vil", "nombre_normalizado": "tu_mejor_laburo_movil",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "Jul
+        2017", "descripcion": ""}, {"nombre": "Universidades", "nombre_normalizado":
+        "universidades", "tipo_de_geometria": "POINT", "fuente": "Ministerio de Educaci\u00f3n",
+        "fecha_de_relevamiento": "julio 2014", "descripcion": ""}, {"nombre": "Usina
+        Del Arte", "nombre_normalizado": "usina_del_arte", "tipo_de_geometria": "POINT",
+        "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Vacunatorio Adulto Mayor Emergencia", "nombre_normalizado": "vacunatorio_adulto_mayor_emergencia",
+        "tipo_de_geometria": "POINT", "fuente": "Atenci\u00f3n Primaria de la Salud
+        del Ministerio de Salud", "fecha_de_relevamiento": "Abril 2020", "descripcion":
+        ""}, {"nombre": "Vacunatorios Adultos", "nombre_normalizado": "vacunatorios_adultos",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Vacunatorios covid", "nombre_normalizado": "vacunatorio_covid",
+        "tipo_de_geometria": "POINT", "fuente": "", "fecha_de_relevamiento": "", "descripcion":
+        ""}, {"nombre": "Vulnerabilidad social por radio censal", "nombre_normalizado":
+        "vulnerabiliad_social_x_radio_censal", "tipo_de_geometria": "POINT", "fuente":
+        "Mapa Escolar", "fecha_de_relevamiento": "", "descripcion": ""}, {"nombre":
+        "Zonas Vulnerables", "nombre_normalizado": "zonas_vulnerables", "tipo_de_geometria":
+        "POLYGON", "fuente": "", "fecha_de_relevamiento": "", "descripcion": ""}],
+        "cantidad_de_categorias": 167}'
+  recorded_at: Tue, 15 Sep 2026 18:35:06 GMT
+recorded_with: VCR 6.4.0

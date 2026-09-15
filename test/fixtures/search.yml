@@ -1,0 +1,393 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/buscar/?limit=2&texto=san%20martin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:08 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '942'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:08 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total": "2", "totalFull": "2", "clasesEncontradas": [{"nombreId":
+        "Espacios Verdes P\u00fablicos -> Espacio Verde", "nombre": "Espacio Verde",
+        "total": "1", "id": "espacios_verdes_publicos|1", "nombreNorm": "espacio_verde"},
+        {"nombreId": "Estaciones de Ferrocarril -> Estaci\u00f3n de Ferrocarril",
+        "nombre": "Estaci\u00f3n de Ferrocarril", "total": "1", "id": "estaciones_de_ferrocarril|1",
+        "nombreNorm": "estacion_de_ferrocarril"}], "instancias": [{"nombre": "Plaza
+        San Mart\u00edn", "id": "espacios_verdes_publicos|882", "clase": "Espacio
+        Verde", "claseId": "espacios_verdes_publicos|1", "headline": "Plaza <em>San</em>
+        <em>Mart\u00edn</em>"}, {"nombre": "Pilar (San Mart\u00edn) (L\u00ednea San
+        Mart\u00edn)", "id": "estaciones_de_ferrocarril|67", "clase": "Estaci\u00f3n
+        de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1", "headline": "Pilar
+        (<em>San</em> <em>Mart\u00edn</em>) (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}]}'
+  recorded_at: Tue, 15 Sep 2026 18:35:08 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/buscar/?categoria=estaciones_de_subte,estaciones_de_ferrocarril&texto=san%20martin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:08 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '8629'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:08 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total": "33", "totalFull": "33", "clasesEncontradas": [{"nombreId":
+        "Estaciones de Ferrocarril -> Estaci\u00f3n de Ferrocarril", "nombre": "Estaci\u00f3n
+        de Ferrocarril", "total": "32", "id": "estaciones_de_ferrocarril|1", "nombreNorm":
+        "estacion_de_ferrocarril"}, {"nombreId": "Estaciones de Subte -> Estaci\u00f3n
+        de Subte (Metro)", "nombre": "Estaci\u00f3n de Subte (Metro)", "total": "1",
+        "id": "estaciones_de_subte|1", "nombreNorm": "estacion_de_subte_(metro)"}],
+        "instancias": [{"nombre": "Pilar (San Mart\u00edn) (L\u00ednea San Mart\u00edn)",
+        "id": "estaciones_de_ferrocarril|67", "clase": "Estaci\u00f3n de Ferrocarril",
+        "claseId": "estaciones_de_ferrocarril|1", "headline": "Pilar (<em>San</em>
+        <em>Mart\u00edn</em>) (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}, {"nombre":
+        "San Mart\u00edn (L\u00ednea Mitre)", "id": "estaciones_de_ferrocarril|278",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "<em>San</em> <em>Mart\u00edn</em> (L\u00ednea Mitre)"}, {"nombre":
+        "Bella Vista (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|56",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Bella Vista (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Mu\u00f1iz (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|65",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Mu\u00f1iz (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "San Miguel (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|21",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "<em>San</em> Miguel (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Santos Lugares (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|74",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "<em>Santos</em> Lugares (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Caseros (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|57",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Caseros (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}, {"nombre":
+        "Villa Crespo (ex Chacarita) (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|58",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Villa Crespo (ex Chacarita) (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Devoto (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|59",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Devoto (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}, {"nombre":
+        "Doctor Domingo Cabred (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|60",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Doctor Domingo Cabred (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "El Palomar (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|75",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "El Palomar (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Hurlingham (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|61",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Hurlingham (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Jos\u00e9 C. Paz (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|62",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Jos\u00e9 C. Paz (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "La Paternal (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|63",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "La Paternal (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Manzanares (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|64",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Manzanares (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Palermo (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|66",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Palermo (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}, {"nombre":
+        "Presidente Derqui (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|68",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Presidente Derqui (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Retiro (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|240",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Retiro (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}, {"nombre":
+        "S\u00e1enz Pe\u00f1a (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|70",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "S\u00e1enz Pe\u00f1a (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Sol y Verde (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|69",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Sol y Verde (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Sucre (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|12",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Sucre (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"}, {"nombre":
+        "Villa Astolfi (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|71",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Villa Astolfi (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "Villa del Parque (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|72",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Villa del Parque (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "William Morris (L\u00ednea San Mart\u00edn)", "id": "estaciones_de_ferrocarril|73",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "William Morris (L\u00ednea <em>San</em> <em>Mart\u00edn</em>)"},
+        {"nombre": "SAN MARTIN (L\u00ednea C)", "id": "estaciones_de_subte|57", "clase":
+        "Estaci\u00f3n de Subte (Metro)", "claseId": "estaciones_de_subte|1", "headline":
+        "<em>SAN</em> <em>MARTIN</em> (L\u00ednea C)"}, {"nombre": "Chilavert (L\u00ednea
+        Mitre)", "id": "estaciones_de_ferrocarril|269", "clase": "Estaci\u00f3n de
+        Ferrocarril", "claseId": "estaciones_de_ferrocarril|1", "headline": "Chilavert
+        (L\u00ednea Mitre)"}, {"nombre": "Jos\u00e9 Le\u00f3n Su\u00e1rez (L\u00ednea
+        Mitre)", "id": "estaciones_de_ferrocarril|287", "clase": "Estaci\u00f3n de
+        Ferrocarril", "claseId": "estaciones_de_ferrocarril|1", "headline": "Jos\u00e9
+        Le\u00f3n Su\u00e1rez (L\u00ednea Mitre)"}, {"nombre": "Malaver (L\u00ednea
+        Mitre)", "id": "estaciones_de_ferrocarril|273", "clase": "Estaci\u00f3n de
+        Ferrocarril", "claseId": "estaciones_de_ferrocarril|1", "headline": "Malaver
+        (L\u00ednea Mitre)"}, {"nombre": "Miguelete (L\u00ednea Mitre)", "id": "estaciones_de_ferrocarril|274",
+        "clase": "Estaci\u00f3n de Ferrocarril", "claseId": "estaciones_de_ferrocarril|1",
+        "headline": "Miguelete (L\u00ednea Mitre)"}, {"nombre": "San Andr\u00e9s (L\u00ednea
+        Mitre)", "id": "estaciones_de_ferrocarril|277", "clase": "Estaci\u00f3n de
+        Ferrocarril", "claseId": "estaciones_de_ferrocarril|1", "headline": "<em>San</em>
+        Andr\u00e9s (L\u00ednea Mitre)"}, {"nombre": "Villa Ballester (L\u00ednea
+        Mitre)", "id": "estaciones_de_ferrocarril|279", "clase": "Estaci\u00f3n de
+        Ferrocarril", "claseId": "estaciones_de_ferrocarril|1", "headline": "Villa
+        Ballester (L\u00ednea Mitre)"}, {"nombre": "Mart\u00ednez (L\u00ednea Mitre)",
+        "id": "estaciones_de_ferrocarril|260", "clase": "Estaci\u00f3n de Ferrocarril",
+        "claseId": "estaciones_de_ferrocarril|1", "headline": "<em>Mart\u00ednez</em>
+        (L\u00ednea Mitre)"}, {"nombre": "J. Anchorena (L\u00ednea Tren de la Costa)",
+        "id": "estaciones_de_ferrocarril|225", "clase": "Estaci\u00f3n de Ferrocarril",
+        "claseId": "estaciones_de_ferrocarril|1", "headline": "J. Anchorena (L\u00ednea
+        Tren de la Costa)"}]}'
+  recorded_at: Tue, 15 Sep 2026 18:35:08 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/buscar/?categoria=estaciones_de_subte&texto=san%20martin
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:09 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '485'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:09 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total": "1", "totalFull": "1", "clasesEncontradas": [{"nombreId":
+        "Estaciones de Subte -> Estaci\u00f3n de Subte (Metro)", "nombre": "Estaci\u00f3n
+        de Subte (Metro)", "total": "1", "id": "estaciones_de_subte|1", "nombreNorm":
+        "estacion_de_subte_(metro)"}], "instancias": [{"nombre": "SAN MARTIN (L\u00ednea
+        C)", "id": "estaciones_de_subte|57", "clase": "Estaci\u00f3n de Subte (Metro)",
+        "claseId": "estaciones_de_subte|1", "headline": "<em>SAN</em> <em>MARTIN</em>
+        (L\u00ednea C)"}]}'
+  recorded_at: Tue, 15 Sep 2026 18:35:09 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/buscar/?texto=garicoits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:09 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '858'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:09 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total": "2", "totalFull": "2", "clasesEncontradas": [{"nombreId":
+        "Espacios Verdes P\u00fablicos -> Espacio Verde", "nombre": "Espacio Verde",
+        "total": "1", "id": "espacios_verdes_publicos|1", "nombreNorm": "espacio_verde"},
+        {"nombreId": "Estaciones de Bicicletas -> Estaci\u00f3n de Bicicletas", "nombre":
+        "Estaci\u00f3n de Bicicletas", "total": "1", "id": "estaciones_de_bicicletas|1",
+        "nombreNorm": "estacion_de_bicicletas"}], "instancias": [{"nombre": "San Miguel
+        de Garicoits", "id": "espacios_verdes_publicos|1146", "clase": "Espacio Verde",
+        "claseId": "espacios_verdes_publicos|1", "headline": "San Miguel de <em>Garicoits</em>"},
+        {"nombre": "260 - SAN MIGUEL DE GARICOITS", "id": "estaciones_de_bicicletas|239",
+        "clase": "Estaci\u00f3n de Bicicletas", "claseId": "estaciones_de_bicicletas|1",
+        "headline": "260 - SAN MIGUEL DE <em>GARICOITS</em>"}]}'
+  recorded_at: Tue, 15 Sep 2026 18:35:09 GMT
+- request:
+    method: get
+    uri: https://epok.buenosaires.gob.ar/buscar/?texto=plaza%20pe%C3%B1a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 15 Sep 2026 18:35:09 GMT
+      Content-Type:
+      - text/javascript
+      Content-Length:
+      - '3131'
+      Connection:
+      - keep-alive
+      Expires:
+      - Tue, 15 Sep 2026 19:20:09 GMT
+      Cache-Control:
+      - max-age=2700
+      X-Frame-Options:
+      - ALLOWALL
+      Vary:
+      - Accept-Encoding, Origin
+      X-Content-Type-Options:
+      - nosniff
+      Pragma:
+      - no-cache
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total": "11", "totalFull": "11", "clasesEncontradas": [{"nombreId":
+        "Bancos -> Banco", "nombre": "Banco", "total": "1", "id": "bancos|1", "nombreNorm":
+        "banco"}, {"nombreId": "Dependencias Culturales -> Dependencia Cultural",
+        "nombre": "Dependencia Cultural", "total": "3", "id": "dependencias_culturales|1",
+        "nombreNorm": "dependencia_cultural"}, {"nombreId": "Espacios Verdes P\u00fablicos
+        -> Espacio Verde", "nombre": "Espacio Verde", "total": "4", "id": "espacios_verdes_publicos|1",
+        "nombreNorm": "espacio_verde"}, {"nombreId": "Estaciones de Bicicletas ->
+        Estaci\u00f3n de Bicicletas", "nombre": "Estaci\u00f3n de Bicicletas", "total":
+        "2", "id": "estaciones_de_bicicletas|1", "nombreNorm": "estacion_de_bicicletas"},
+        {"nombreId": "Puntos Verdes -> Punto Verde", "nombre": "Punto Verde", "total":
+        "1", "id": "puntos_verdes|1", "nombreNorm": "punto_verde"}], "instancias":
+        [{"nombre": "Plaza Rodr\u00edguez Pe\u00f1a", "id": "espacios_verdes_publicos|884",
+        "clase": "Espacio Verde", "claseId": "espacios_verdes_publicos|1", "headline":
+        "<em>Plaza</em> Rodr\u00edguez Pe\u00f1a"}, {"nombre": "Plaza Rosario Vera
+        Pe\u00f1aloza", "id": "espacios_verdes_publicos|1143", "clase": "Espacio Verde",
+        "claseId": "espacios_verdes_publicos|1", "headline": "<em>Plaza</em> Rosario
+        Vera Pe\u00f1aloza"}, {"nombre": "LA CALESITA DE PASCUALITO DE LA PLAZA SAENZ
+        PE\u00d1A", "id": "dependencias_culturales|1069", "clase": "Dependencia Cultural",
+        "claseId": "dependencias_culturales|1", "headline": "LA CALESITA DE PASCUALITO
+        DE LA <em>PLAZA</em> SAENZ PE\u00d1A"}, {"nombre": "PLAZA RODRIGUEZ PE\u00d1A",
+        "id": "dependencias_culturales|2382", "clase": "Dependencia Cultural", "claseId":
+        "dependencias_culturales|1", "headline": "<em>PLAZA</em> RODRIGUEZ PE\u00d1A"},
+        {"nombre": "PLAZOLETA ROQUE SAENZ PE\u00d1A", "id": "dependencias_culturales|1068",
+        "clase": "Dependencia Cultural", "claseId": "dependencias_culturales|1", "headline":
+        "<em>PLAZOLETA</em> ROQUE SAENZ PE\u00d1A"}, {"nombre": "PLAZA VERA PE\u00d1ALOZZA",
+        "id": "puntos_verdes|88", "clase": "Punto Verde", "claseId": "puntos_verdes|1",
+        "headline": "<em>PLAZA</em> VERA PE\u00d1ALOZZA"}, {"nombre": "Rodolfo Ortega
+        Pe\u00f1a", "id": "espacios_verdes_publicos|487", "clase": "Espacio Verde",
+        "claseId": "espacios_verdes_publicos|1", "headline": "Rodolfo Ortega Pe\u00f1a"},
+        {"nombre": "349 - Plaza Saenz Pe\u00f1a", "id": "estaciones_de_bicicletas|232",
+        "clase": "Estaci\u00f3n de Bicicletas", "claseId": "estaciones_de_bicicletas|1",
+        "headline": "349 - <em>Plaza</em> Saenz Pe\u00f1a"}, {"nombre": "Alcira de
+        la Pe\u00f1a", "id": "espacios_verdes_publicos|1455", "clase": "Espacio Verde",
+        "claseId": "espacios_verdes_publicos|1", "headline": "Alcira de la Pe\u00f1a"},
+        {"nombre": "Banco Ciudad De Buenos Aires Sucursal 52 - Plaza De Mayo", "id":
+        "bancos|70", "clase": "Banco", "claseId": "bancos|1", "headline": "Banco Ciudad
+        De Buenos Aires Sucursal 52 - <em>Plaza</em> De Mayo"}, {"nombre": "195 -
+        Plaza Garay", "id": "estaciones_de_bicicletas|183", "clase": "Estaci\u00f3n
+        de Bicicletas", "claseId": "estaciones_de_bicicletas|1", "headline": "195
+        - <em>Plaza</em> Garay"}]}'
+  recorded_at: Tue, 15 Sep 2026 18:35:09 GMT
+recorded_with: VCR 6.4.0
