@@ -74,6 +74,51 @@ To know where a location is, `Epok.datos_utiles` asks the city's USIG service fo
 
 Every request failure raises `Epok::Error`. An id that does not exist raises `Epok::NotFound`.
 
+## Putting it together
+
+"I'm at Callao y Corrientes, what's around me?" in five requests:
+
+```ruby
+require "epok"
+
+# 1. Turn a typed address into coordinates.
+here = Epok.geocode("callao y corrientes").first
+puts "You are at #{here.address}"
+
+# 2. Which neighbourhood and comuna is that?
+area = Epok.datos_utiles(here.location)
+puts "That's #{area.barrio}, #{area.comuna}"
+
+# 3. What's within 300 metres, by category?
+nearby = Epok.geocoder(here.location, %w[estaciones_de_subte farmacias], radius: 300)
+nearby.sort_by(&:distance).first(5).each do |place|
+  puts "  #{place.distance.round} m  #{place.name} (#{place.kind})"
+end
+
+# 4. Drill into one: full record and coordinates for a map pin.
+closest = nearby.min_by(&:distance)
+puts "Pin: #{closest.location.y}, #{closest.location.x}"
+closest.content.each { |key, value| puts "  #{key}: #{value}" }
+```
+
+```
+You are at CALLAO AV. y CORRIENTES AV., CABA
+That's San Nicolas, Comuna 3
+  3 m  CALLAO - MAESTRO ALFREDO BRAVO (Línea B) (Estación de Subte (Metro))
+  42 m  Farmacia en CORRIENTES AV. 1820 (Farmacia)
+  73 m  Farmacia en CORRIENTES AV. 1835 (Farmacia)
+  98 m  Farmacia en CALLAO AV. 477 (Farmacia)
+  111 m  Farmacia en CORRIENTES AV. 1880 (Farmacia)
+Pin: -34.604419, -58.392318
+  Nombre: CALLAO - MAESTRO ALFREDO BRAVO (Línea B)
+  Línea: B
+  Estado: Estación Malabia cerrada por obras de renovación integral.
+  Cabeceras: J. M. de Rosas - L. N. Alem
+  Tiempo: 27 min.
+```
+
+Steps 1 to 3 are one request each; step 4 is two (the record, then the coordinate conversion). The content hash is whatever the city publishes for that category: subway stations carry line, status and travel time, pharmacies carry phone and delivery details.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
