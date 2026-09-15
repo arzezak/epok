@@ -1,0 +1,46 @@
+require "test_helper"
+
+module Epok
+  class APITest < Minitest::Test
+    include WebMock::API
+
+    def setup
+      VCR.eject_cassette
+      VCR.turn_off!
+    end
+
+    def teardown
+      WebMock.reset!
+      VCR.turn_on!
+    end
+
+    def test_that_a_server_error_raises
+      stub_request(:get, /epok/).to_return(status: 500, body: "boom")
+
+      error = assert_raises(Error) { Epok.search("x").first }
+      assert_match "500", error.message
+    end
+
+    def test_that_a_timeout_raises
+      stub_request(:get, /epok/).to_timeout
+
+      assert_raises(Error) { Epok.categories }
+    end
+
+    def test_that_a_non_json_body_raises
+      stub_request(:get, /epok/).to_return(status: 200, body: "<html>")
+
+      assert_raises(Error) { Epok.search("x").first }
+    end
+
+    def test_that_a_missing_object_raises_not_found
+      stub_request(:get, /getObjectContent/).to_return(status: 200, body: "{}")
+
+      assert_raises(NotFound) { Object.new("nope|1").content }
+    end
+
+    def test_that_not_found_is_an_error
+      assert_operator NotFound, :<, Error
+    end
+  end
+end

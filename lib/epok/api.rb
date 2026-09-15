@@ -2,11 +2,18 @@ require "net/http"
 require "json"
 
 module Epok
+  class Error < StandardError; end
+  class NotFound < Error; end
+
   class API
     BASE_URL = "https://epok.buenosaires.gob.ar".freeze
+    TIMEOUT = 10
 
     def self.object(id)
-      get("/getObjectContent/", id: id)
+      object = get("/getObjectContent/", id: id)
+      raise NotFound, "no object with id #{id}" if object.empty?
+
+      object
     end
 
     def self.search(query)
@@ -25,7 +32,19 @@ module Epok
     def self.get(path, params)
       uri = URI("#{BASE_URL}#{path}")
       uri.query = URI.encode_www_form(params)
-      JSON.parse(Net::HTTP.get_response(uri).body)
+
+      response = Net::HTTP.start(uri.host, uri.port, use_ssl: true,
+        open_timeout: TIMEOUT, read_timeout: TIMEOUT) do |http|
+        http.get(uri.request_uri)
+      end
+
+      unless response.is_a?(Net::HTTPSuccess)
+        raise Error, "EPOk responded #{response.code} to #{uri}"
+      end
+
+      JSON.parse(response.body)
+    rescue SystemCallError, SocketError, Timeout::Error, OpenSSL::SSL::SSLError, JSON::ParserError => e
+      raise Error, "#{e.class}: #{e.message}"
     end
     private_class_method :get
   end
