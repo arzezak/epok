@@ -6,6 +6,8 @@ follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-09-15
+
 ### Changed
 
 - **Breaking:** `Epok.geocoder` is now `Epok.nearby`. Next to `Epok.geocode`
@@ -13,7 +15,6 @@ follows [Semantic Versioning](https://semver.org/).
 - Every string in an API response is stripped and squeezed once in `API.get`.
   The API pads and double-spaces names at random, in every endpoint, and the
   per-field strips it replaces only covered some of them.
-
 - Gemspec declares `required_ruby_version >= 3.3`, links the changelog and
   source on rubygems.org, and ships only `lib/`, README, CHANGELOG and
   LICENSE instead of the whole repository (tests and cassettes included).
@@ -87,7 +88,8 @@ Tagged but never pushed to rubygems.org.
 
 Initial release: `Epok.search`, `Epok.geocoder` and `Epok::Object`.
 
-[Unreleased]: https://github.com/arzezak/epok/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/arzezak/epok/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/arzezak/epok/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/arzezak/epok/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/arzezak/epok/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/arzezak/epok/compare/v0.2.0...v0.3.0
