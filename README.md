@@ -25,13 +25,13 @@ Or install it yourself as:
 => #<struct Epok::Location x=-58.38157, y=-34.603738>
 
 >> pharmacies_around_obelisco = Epok.geocoder(obelisco, "farmacias")
-=> #<Epok::Geocoder:0x00007f8719ab4f08 @x=-58.38157, @y=-34.603738, @categories="farmacias">
+=> #<Epok::Collection:0x00007f8719ab4f08 ...>
 
 >> pharmacies_around_obelisco.first.content
-=> {"Nombre"=>"Farmacia en PELLEGRINI, CARLOS 765", "Teléfono"=>"43223198 43220298"}
+=> {"Nombre"=>"ROUX SRL", "Teléfono"=>"4501-5871", "Barrio"=>"VILLA DEL PARQUE", "Comuna"=>"Comuna 11", ...}
 
 >> cgp = Epok.search("cgp")
-=> #<Epok::Search:0x00007f871a09ac60 @query="cgp">
+=> #<Epok::Collection:0x00007f871a09ac60 ...>
 
 >> sede_4 = cgp.first
 => #<Epok::Object:0x00007f8719b36788 @id="sedes_de_comunas|4">
@@ -40,8 +40,17 @@ Or install it yourself as:
 => "Sede Comunal 4"
 
 >> sede_4.content
-=> {"Nombre"=>"Sede Comunal 4", "Dirección"=>"BARCO CENTENERA del 2906", "Teléfonos"=>"4918-2243/1815/8920-4949 9024 Int. 105", "Trámites y Servicios"=>"<a href=\"http://www.buenosaires.gob.ar/comuna-4/sede-comunal-4\" target=\"_blank\">link</a>"}
+=> {"Nombre"=>"Sede Comunal 4", "Dirección"=>"BARCO CENTENERA del 2906", "Barrio"=>"NUEVA POMPEYA", "Comuna"=>"Comuna 4", ...}
 ```
+
+Collections are `Enumerable` and fetch lazily, so nothing is requested until you iterate:
+
+```ruby
+>> Epok.search("plaza peña").map(&:name).first(3)
+=> ["Plaza Rodríguez Peña", "Plaza Rosario Vera Peñaloza", "LA CALESITA DE PASCUALITO DE LA PLAZA SAENZ PEÑA"]
+```
+
+Each `Epok::Object` fetches its own content on first access, so `name` and `content` cost one extra request per object.
 
 ## Development
 

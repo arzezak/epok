@@ -2,22 +2,18 @@ module Epok
   class Collection
     include Enumerable
 
-    attr_reader :data
-
-    def initialize(data, id = "id")
-      @data = collection(data, id)
+    def initialize(&fetch)
+      @fetch = fetch
     end
 
     def each(&block)
-      data.each(&block)
+      objects.each(&block)
     end
 
     private
 
-    def collection(data, id)
-      data.map do |item|
-        Object.new(item[id])
-      end
+    def objects
+      @objects ||= @fetch.call.map { |item| Object.new(item["id"]) }
     end
   end
 end

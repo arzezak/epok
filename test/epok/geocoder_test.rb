@@ -3,7 +3,7 @@ require "test_helper"
 module Epok
   class GeocoderTest < Minitest::Test
     def setup
-      VCR.insert_cassette("geocoder", record: :new_episodes)
+      VCR.insert_cassette("geocoder")
     end
 
     def teardown
@@ -22,8 +22,7 @@ module Epok
 
     def result
       obelisco = Location.new(x: -58.381570, y: -34.603738)
-      results = Geocoder.new(obelisco, "estaciones_de_subte")
-      results.first
+      Epok.geocoder(obelisco, "estaciones_de_subte").first
     end
   end
 end

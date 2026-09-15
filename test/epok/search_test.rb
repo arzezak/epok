@@ -18,11 +18,14 @@ module Epok
       assert_match "San Miguel de Garicoits", result.name
     end
 
+    def test_that_search_encodes_the_query
+      assert_match "Peña", Epok.search("plaza peña").first.name
+    end
+
     private
 
     def result
-      results = Search.new("garicoits")
-      results.first
+      Epok.search("garicoits").first
     end
   end
 end
