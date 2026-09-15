@@ -30,6 +30,19 @@ module Epok
       object["direccionNormalizada"]
     end
 
+    # Longitude and latitude as a Location, or nil when EPOk has no
+    # centroid for the object. Costs one extra request the first time.
+    def location
+      return @location if defined?(@location)
+
+      centroid = object.dig("ubicacion", "centroide")
+      @location = centroid && begin
+        x, y = centroid[/\(([^)]*)\)/, 1].split.map(&:to_f)
+        lon, lat = API.to_lonlat(x, y)
+        Location.new(x: lon, y: lat)
+      end
+    end
+
     def content
       object["contenido"].each_with_object({}) do |entry, hash|
         name, value = entry.values_at("nombre", "valor")

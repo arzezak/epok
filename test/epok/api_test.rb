@@ -39,6 +39,25 @@ module Epok
       assert_raises(NotFound) { Object.new("nope|1").content }
     end
 
+    def test_that_an_object_without_a_centroid_has_no_location
+      stub_request(:get, /getObjectContent/)
+        .to_return(status: 200, body: '{"contenido": [], "ubicacion": null}')
+
+      object = Object.new("espacios_verdes_publicos|1")
+
+      assert_nil object.location
+      assert_nil object.location
+    end
+
+    def test_that_a_failed_coordinate_conversion_raises
+      stub_request(:get, /getObjectContent/)
+        .to_return(status: 200, body: '{"ubicacion": {"centroide": "POINT (1 2)"}}')
+      stub_request(:get, /usig/)
+        .to_return(status: 200, body: '{"tipo_resultado":"Error","resultado":{"x":"","y":""}}')
+
+      assert_raises(Error) { Object.new("x|1").location }
+    end
+
     def test_that_not_found_is_an_error
       assert_operator NotFound, :<, Error
     end

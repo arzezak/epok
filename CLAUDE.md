@@ -14,6 +14,15 @@ bundle exec swarf lib/    # complexity vs. coverage report, worst first
 Cassettes are gitignored, so the first test run hits the live API.
 The API rejects curl's default User-Agent, but Ruby's Net::HTTP works fine.
 
+## API notes
+
+- `/buscar/`, `/reverseGeocoderLugares/` and `/getObjectContent/` are the
+  documented endpoints. `/getCategorias/` is not documented but lists all
+  categories the geocoder accepts.
+- Unknown ids return `200 {}`, unknown categories return an empty list.
+- Object coordinates are projected (Gauss-Krüger Buenos Aires). USIG's
+  `convertir_coordenadas` service turns them into longitude and latitude.
+
 ## Releasing
 
 1. Make sure `main` is clean and pushed, and `bundle exec rake test` passes.

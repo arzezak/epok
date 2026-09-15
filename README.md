@@ -20,37 +20,45 @@ Or install it yourself as:
 
 ## Usage
 
+Everything starts from a location (longitude, latitude) or a text search:
+
 ```ruby
 >> obelisco = Epok::Location.new(x: -58.381570, y: -34.603738)
 => #<struct Epok::Location x=-58.38157, y=-34.603738>
 
->> pharmacies_around_obelisco = Epok.geocoder(obelisco, "farmacias")
+>> nearby = Epok.geocoder(obelisco, %w[farmacias estaciones_de_subte], radius: 300)
 => #<Epok::Collection:0x00007f8719ab4f08 ...>
 
->> pharmacies_around_obelisco.first.content
-=> {"Nombre"=>"ROUX SRL", "Teléfono"=>"4501-5871", "Barrio"=>"VILLA DEL PARQUE", "Comuna"=>"Comuna 11", ...}
+>> nearby.sort_by(&:distance).first(3).map { |o| [o.name, o.kind, o.distance.round] }
+=> [["C. PELLEGRINI (Línea B)", "Estación de Subte (Metro)", 79],
+    ["Farmacia en PELLEGRINI, CARLOS 423", "Farmacia", 83],
+    ["9 DE JULIO (Línea D)", "Estación de Subte (Metro)", 107]]
 
->> cgp = Epok.search("cgp")
-=> #<Epok::Collection:0x00007f871a09ac60 ...>
-
->> sede_4 = cgp.first
-=> #<Epok::Object:0x00007f8719b36788 @id="sedes_de_comunas|4">
+>> sede_4 = Epok.search("cgp").first
+=> #<Epok::Object:0x00007f8719b36788 @id="sedes_de_comunas|4" ...>
 
 >> sede_4.name
 => "Sede Comunal 4"
 
 >> sede_4.content
 => {"Nombre"=>"Sede Comunal 4", "Dirección"=>"BARCO CENTENERA del 2906", "Barrio"=>"NUEVA POMPEYA", "Comuna"=>"Comuna 4", ...}
+
+>> sede_4.location
+=> #<struct Epok::Location x=-58.41..., y=-34.65...>
 ```
 
-Collections are `Enumerable` and fetch lazily, so nothing is requested until you iterate:
+Collections are `Enumerable` and fetch lazily, so nothing is requested until you iterate.
+
+An `Epok::Object` knows its `id`, `name`, `kind`, `category` and (from the geocoder) `distance` in metres straight from the listing. `content`, `normalized_address` and `location` fetch the full record on first use, and `location` makes one more request to the city's USIG service to convert the projected coordinates to longitude and latitude.
+
+The geocoder takes one category or an array. The full list, with ids and display names, is:
 
 ```ruby
->> Epok.search("plaza peña").map(&:name).first(3)
-=> ["Plaza Rodríguez Peña", "Plaza Rosario Vera Peñaloza", "LA CALESITA DE PASCUALITO DE LA PLAZA SAENZ PEÑA"]
+>> Epok.categories.first
+=> #<struct Epok::Category id="academias_de_espanol", name="Academias de Español", description="">
 ```
 
-Each `Epok::Object` fetches its own content on first access, so `name` and `content` cost one extra request per object.
+Every request failure raises `Epok::Error`. An id that does not exist raises `Epok::NotFound`.
 
 ## Development
 

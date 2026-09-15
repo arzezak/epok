@@ -26,6 +26,14 @@ module Epok
       assert_equal "DE MAYO AV. 869", object.normalized_address
     end
 
+    def test_that_an_object_has_a_location
+      location = object.location
+
+      assert_instance_of Location, location
+      assert_in_delta(-58.38, location.x, 0.01)
+      assert_in_delta(-34.61, location.y, 0.01)
+    end
+
     def test_that_an_object_has_content
       expected_content = {
         "Nombre" => "BIBLIOTECA ANMAT",

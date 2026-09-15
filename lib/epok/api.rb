@@ -7,6 +7,7 @@ module Epok
 
   class API
     BASE_URL = "https://epok.buenosaires.gob.ar".freeze
+    USIG_URL = "https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas".freeze
     TIMEOUT = 10
 
     def self.object(id)
@@ -29,8 +30,17 @@ module Epok
       get("/getCategorias/", {})["categorias"]
     end
 
+    # Converts EPOk's projected coordinates (Gauss-Krüger Buenos Aires) to
+    # longitude and latitude through the city's USIG service.
+    def self.to_lonlat(x, y)
+      response = get(USIG_URL, x: x, y: y, output: "lonlat")
+      raise Error, "USIG could not convert (#{x}, #{y})" unless response["tipo_resultado"] == "Ok"
+
+      response["resultado"].values_at("x", "y").map(&:to_f)
+    end
+
     def self.get(path, params)
-      uri = URI("#{BASE_URL}#{path}")
+      uri = URI(path.start_with?("http") ? path : "#{BASE_URL}#{path}")
       uri.query = URI.encode_www_form(params)
 
       response = Net::HTTP.start(uri.host, uri.port, use_ssl: true,
