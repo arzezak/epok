@@ -8,6 +8,7 @@ module Epok
   class API
     BASE_URL = "https://epok.buenosaires.gob.ar".freeze
     USIG_URL = "https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas".freeze
+    DATOS_UTILES_URL = "https://ws.usig.buenosaires.gob.ar/datos_utiles".freeze
     TIMEOUT = 10
 
     def self.object(id)
@@ -30,6 +31,10 @@ module Epok
 
     def self.categories
       get("/getCategorias/", {})["categorias"]
+    end
+
+    def self.datos_utiles(x, y)
+      get(DATOS_UTILES_URL, x: x, y: y)
     end
 
     # Converts EPOk's projected coordinates (Gauss-Krüger Buenos Aires) to

@@ -58,6 +58,13 @@ The geocoder takes one category or an array. The full list, with ids and display
 => #<struct Epok::Category id="academias_de_espanol", name="Academias de Español", description="">
 ```
 
+To know where a location is, `Epok.datos_utiles` asks the city's USIG service for the neighbourhood, comuna, police precinct, hospital area, and school district. Outside the city those are nil and the AMBA partido and localidad are filled instead:
+
+```ruby
+>> Epok.datos_utiles(obelisco)
+=> #<struct Epok::DatosUtiles barrio="San Nicolas", comuna="Comuna 1", comisaria="3", comisaria_vecinal="1B", area_hospitalaria="HTAL. DR. J.M. RAMOS MEJÍA", region_sanitaria="I (Este)", distrito_escolar="Distrito Escolar I", partido_amba=nil, localidad_amba=nil>
+```
+
 Every request failure raises `Epok::Error`. An id that does not exist raises `Epok::NotFound`.
 
 ## Development

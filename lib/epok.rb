@@ -6,6 +6,12 @@ require "epok/version"
 module Epok
   Location = Struct.new(:x, :y, keyword_init: true)
   Category = Struct.new(:id, :name, :description, keyword_init: true)
+  DatosUtiles = Struct.new(
+    :barrio, :comuna, :comisaria, :comisaria_vecinal,
+    :area_hospitalaria, :region_sanitaria, :distrito_escolar,
+    :partido_amba, :localidad_amba,
+    keyword_init: true
+  )
 
   DEFAULT_RADIUS = 500
 
@@ -19,6 +25,17 @@ module Epok
     categories = Array(categories).join(",")
 
     Collection.new { API.geocoder(location.x, location.y, categories, radius) }
+  end
+
+  def self.datos_utiles(location)
+    datos = API.datos_utiles(location.x, location.y)
+
+    DatosUtiles.new(
+      DatosUtiles.members.to_h do |member|
+        value = datos[member.to_s].to_s.strip.squeeze(" ")
+        [member, value.empty? ? nil : value]
+      end
+    )
   end
 
   def self.categories

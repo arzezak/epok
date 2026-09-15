@@ -37,8 +37,9 @@ https://ws.usig.buenosaires.gob.ar/rest/).
 - Unknown ids return `200 {}`, unknown categories return an empty list.
 - Object coordinates are projected (Gauss-Krüger Buenos Aires). USIG's
   `/rest/convertir_coordenadas` turns them into longitude and latitude.
-- Not wrapped yet: `ws.usig.buenosaires.gob.ar/datos_utiles?x=&y=` (barrio,
-  comuna, comisaría for a lat/lng) and
+- `ws.usig.buenosaires.gob.ar/datos_utiles?x=&y=` answers with empty strings
+  outside the city; `Epok.datos_utiles` turns those into nil.
+- Not wrapped yet:
   `servicios.usig.buenosaires.gob.ar/normalizar/?direccion=&geocodificar=true`
   (address to lat/lng).
 - A December 2025 city report says "API USIG" is being replaced by
