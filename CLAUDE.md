@@ -49,3 +49,26 @@ https://ws.usig.buenosaires.gob.ar/rest/).
   list and an `errorMessage`; `Epok.geocode` raises NotFound with it.
 - A December 2025 city report says "API USIG" is being replaced by
   "API Servicios Geo" during 2026. The USIG hosts above may move.
+
+## Releasing
+
+Every user-visible change lands with an entry under `[Unreleased]` in
+`CHANGELOG.md`, in the same commit as the code.
+
+1. Make sure `main` is clean and pushed, and `bundle exec rake test` passes.
+2. Bump `Epok::VERSION` in `lib/epok/version.rb`. Follow semver:
+   patch for fixes, minor for new behaviour, major for breaking changes.
+3. In `CHANGELOG.md`, rename `[Unreleased]` to the version and date, add a
+   fresh empty `[Unreleased]` above it, and update the compare links at the
+   bottom.
+4. Commit both as `Bump version to X.Y.Z`.
+5. Run `bundle exec rake release`. This builds the gem into `pkg/`, creates
+   and pushes the `vX.Y.Z` tag, and pushes the gem to rubygems.org.
+   The push prompts for a rubygems OTP, so it has to run in an interactive
+   terminal. If it fails after tagging, push the built gem directly:
+   `gem push pkg/epok-X.Y.Z.gem`.
+6. Create a GitHub release from the tag using the changelog section as the
+   notes: `gh release create vX.Y.Z --title vX.Y.Z --notes "..."`.
+
+Version numbers on rubygems.org cannot be reused, so check the diff before
+running step 5.
