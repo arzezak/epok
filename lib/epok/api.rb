@@ -6,14 +6,13 @@ module Epok
   class NotFound < Error; end
 
   class API
-    BASE_URL = "https://epok.buenosaires.gob.ar".freeze
-    USIG_URL = "https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas".freeze
-    DATOS_UTILES_URL = "https://ws.usig.buenosaires.gob.ar/datos_utiles".freeze
-    NORMALIZAR_URL = "https://servicios.usig.buenosaires.gob.ar/normalizar/".freeze
+    EPOK_URL = "https://epok.buenosaires.gob.ar".freeze
+    USIG_URL = "https://ws.usig.buenosaires.gob.ar".freeze
+    USIG_SERVICES_URL = "https://servicios.usig.buenosaires.gob.ar".freeze
     TIMEOUT = 10
 
     def self.object(id)
-      object = get("/getObjectContent/", id: id)
+      object = get(EPOK_URL, "/getObjectContent/", id: id)
       raise NotFound, "no object with id #{id}" if object.empty?
 
       object
@@ -22,20 +21,20 @@ module Epok
     def self.search(query, categories = nil, limit = nil)
       params = { texto: query, categoria: categories, limit: limit }.compact
 
-      get("/buscar/", params)["instancias"]
+      get(EPOK_URL, "/buscar/", params)["instancias"]
     end
 
     def self.geocoder(x, y, categories, radius)
-      get("/reverseGeocoderLugares/",
+      get(EPOK_URL, "/reverseGeocoderLugares/",
         x: x, y: y, categorias: categories, radio: radius)["instancias"]
     end
 
     def self.categories
-      get("/getCategorias/", {})["categorias"]
+      get(EPOK_URL, "/getCategorias/", {})["categorias"]
     end
 
     def self.geocode(text)
-      response = get(NORMALIZAR_URL, direccion: text, geocodificar: true)
+      response = get(USIG_SERVICES_URL, "/normalizar/", direccion: text, geocodificar: true)
       addresses = response["direccionesNormalizadas"]
       raise NotFound, response["errorMessage"] if addresses.empty?
 
@@ -43,20 +42,20 @@ module Epok
     end
 
     def self.datos_utiles(x, y)
-      get(DATOS_UTILES_URL, x: x, y: y)
+      get(USIG_URL, "/datos_utiles", x: x, y: y)
     end
 
     # Converts EPOk's projected coordinates (Gauss-Krüger Buenos Aires) to
     # longitude and latitude through the city's USIG service.
     def self.to_lonlat(x, y)
-      response = get(USIG_URL, x: x, y: y, output: "lonlat")
+      response = get(USIG_URL, "/rest/convertir_coordenadas", x: x, y: y, output: "lonlat")
       raise Error, "USIG could not convert (#{x}, #{y})" unless response["tipo_resultado"] == "Ok"
 
       response["resultado"].values_at("x", "y").map(&:to_f)
     end
 
-    def self.get(path, params)
-      uri = URI(path.start_with?("http") ? path : "#{BASE_URL}#{path}")
+    def self.get(host, path, params)
+      uri = URI("#{host}#{path}")
       uri.query = URI.encode_www_form(params)
 
       response = Net::HTTP.start(uri.host, uri.port, use_ssl: true,
