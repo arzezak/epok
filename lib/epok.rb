@@ -31,13 +31,16 @@ module Epok
 
   def self.geocode(text)
     API.geocode(text).map do |address|
-      x, y = address["coordenadas"].values_at("x", "y").map(&:to_f)
+      coordinates = address["coordenadas"]
+      location = coordinates && Location.new(
+        x: coordinates["x"].to_f, y: coordinates["y"].to_f
+      )
 
       Address.new(
         address: address["direccion"],
         partido: address["nombre_partido"],
         localidad: address["nombre_localidad"],
-        location: Location.new(x: x, y: y)
+        location: location
       )
     end
   end

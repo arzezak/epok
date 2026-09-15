@@ -69,6 +69,33 @@ module Epok
       assert_equal "Libreria", result.kind
     end
 
+    def test_that_an_unparseable_centroid_raises
+      stub_request(:get, /getObjectContent/)
+        .to_return(status: 200, body: '{"ubicacion": {"centroide": "garbage"}}')
+
+      assert_raises(Error) { Object.new("x|1").location }
+    end
+
+    def test_that_non_string_content_values_are_tolerated
+      stub_request(:get, /getObjectContent/).to_return(status: 200, body: JSON.generate(
+        "contenido" => [
+          {"nombre" => "Nombre", "valor" => "Plaza"},
+          {"nombre" => "Codigo", "valor" => 12},
+          {"nombre" => "Vacio", "valor" => nil}
+        ]
+      ))
+
+      assert_equal({"Nombre" => "Plaza", "Codigo" => "12"}, Object.new("x|1").content)
+    end
+
+    def test_that_a_geocode_match_without_coordinates_has_no_location
+      stub_request(:get, /normalizar/).to_return(status: 200, body: JSON.generate(
+        "direccionesNormalizadas" => [{"direccion" => "X 1, CABA", "nombre_partido" => "CABA", "nombre_localidad" => "CABA"}]
+      ))
+
+      assert_nil Epok.geocode("x 1").first.location
+    end
+
     def test_that_not_found_is_an_error
       assert_operator NotFound, :<, Error
     end

@@ -14,6 +14,12 @@ follows [Semantic Versioning](https://semver.org/).
   The API pads and double-spaces names at random, in every endpoint, and the
   per-field strips it replaces only covered some of them.
 
+### Fixed
+
+- Malformed responses no longer escape as `NoMethodError`: an unparseable
+  centroid raises `Epok::Error`, non-string content values are kept as
+  strings, and a geocode match without coordinates has a nil `location`.
+
 ## [0.5.0] - 2026-09-15
 
 ### Added

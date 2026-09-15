@@ -37,8 +37,10 @@ module Epok
 
       centroid = object.dig("ubicacion", "centroide")
       @location = centroid && begin
-        x, y = centroid[/\(([^)]*)\)/, 1].split.map(&:to_f)
-        lon, lat = API.to_lonlat(x, y)
+        point = centroid[/\(([^)]*)\)/, 1]
+        raise Error, "unparseable centroid #{centroid.inspect} for #{id}" unless point
+
+        lon, lat = API.to_lonlat(*point.split.map(&:to_f))
         Location.new(x: lon, y: lat)
       end
     end
@@ -46,6 +48,7 @@ module Epok
     def content
       object["contenido"].each_with_object({}) do |entry, hash|
         name, value = entry.values_at("nombre", "valor")
+        value = value.to_s
         hash[name] = value unless value.empty?
       end
     end
