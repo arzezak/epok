@@ -11,45 +11,37 @@ module Epok
     end
 
     def test_that_an_object_has_a_name
-      assert_equal "BIBLIOTECA ANMAT", object.name
+      assert_equal "Sede Comunal 4", object.name
     end
 
     def test_that_an_object_has_a_kind
-      assert_equal "Dependencias Culturales", object.kind
+      assert_equal "Sedes de Comunas", object.kind
     end
 
     def test_that_an_object_has_a_category
-      assert_equal "dependencias_culturales", object.category
+      assert_equal "sedes_de_comunas", object.category
     end
 
     def test_that_an_object_has_a_normalized_address
-      assert_equal "DE MAYO AV. 869", object.normalized_address
+      assert_equal "BARCO CENTENERA del 2906", object.normalized_address
     end
 
     def test_that_an_object_has_a_location
       location = object.location
 
       assert_instance_of Location, location
-      assert_in_delta(-58.38, location.x, 0.01)
-      assert_in_delta(-34.61, location.y, 0.01)
+      assert_in_delta(-58.42, location.x, 0.01)
+      assert_in_delta(-34.65, location.y, 0.01)
     end
 
     def test_that_an_object_has_content
-      expected_content = {
-        "Nombre" => "BIBLIOTECA ANMAT",
-        "Categoria" => "BIBLIOTECA",
-        "Subcategoria" => "ESPECIALIZADA GUBERNAMENTAL",
-        "Teléfonos" => "54.011 4340-0800 INT. 1047 FAX 54.011 4340-0800 INT. 1048",
-        "E-Mail" => "<a href=\"mailto:contacto@example.com\">contacto@example.com</a>",
-        "Página WEB" => "<a href=\"http://WWW.ANMAT.GOV.AR\" target=\"_blank\">WWW.ANMAT.GOV.AR</a>",
-        "Dependencia" => "ADMINISTRACION NACIONAL DE MEDICAMENTOS Y TECNOLOGIA MEDICA ANMAT",
-        "Sector" => "PUBLICO",
-        "Dirección" => "DE MAYO AV. 869",
-        "Barrio" => "MONSERRAT",
-        "Comuna" => "Comuna 1"
-      }
+      content = object.content
 
-      assert_equal expected_content, object.content
+      assert_equal "Sede Comunal 4", content["Nombre"]
+      assert_equal "BARCO CENTENERA del 2906", content["Dirección"]
+      assert_equal "NUEVA POMPEYA", content["Barrio"]
+      assert_equal "Comuna 4", content["Comuna"]
+      assert_match %r{<a href="https://buenosaires.gob.ar/}, content["Trámites y servicios"]
     end
 
     def test_that_listing_attributes_do_not_fetch
@@ -76,7 +68,7 @@ module Epok
     private
 
     def object
-      Object.new("dependencias_culturales|1635")
+      Object.new("sedes_de_comunas|4")
     end
   end
 end

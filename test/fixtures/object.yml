@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://epok.buenosaires.gob.ar/getObjectContent/?id=dependencias_culturales%7C1635
+    uri: https://epok.buenosaires.gob.ar/getObjectContent/?id=sedes_de_comunas%7C4
     body:
       encoding: US-ASCII
       string: ''
@@ -21,15 +21,15 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 15 Sep 2026 18:35:06 GMT
+      - Tue, 15 Sep 2026 18:49:39 GMT
       Content-Type:
       - text/javascript
       Content-Length:
-      - '2434'
+      - '1219'
       Connection:
       - keep-alive
       Expires:
-      - Tue, 15 Sep 2026 19:20:06 GMT
+      - Tue, 15 Sep 2026 19:34:39 GMT
       Cache-Control:
       - max-age=2700
       X-Frame-Options:
@@ -43,40 +43,24 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"contenido": [{"nombreId": "nombre", "nombre": "Nombre", "posicion":
-        "1", "valor": "BIBLIOTECA ANMAT "}, {"nombreId": "_categoria", "nombre": "Categoria",
-        "posicion": "2", "valor": "BIBLIOTECA"}, {"nombreId": "_subcategoria", "nombre":
-        "Subcategoria", "posicion": "3", "valor": "ESPECIALIZADA GUBERNAMENTAL"},
-        {"nombreId": "actividades secundarias", "nombre": "Actividades Secundarias",
-        "posicion": "4", "valor": ""}, {"nombreId": "ventaonline", "nombre": "Venta
-        Online", "posicion": "5", "valor": ""}, {"nombreId": "ventatelefonica", "nombre":
-        "Venta Telef\u00f3nica", "posicion": "6", "valor": ""}, {"nombreId": "telefonos",
-        "nombre": "Tel\u00e9fonos", "posicion": "7", "valor": "54.011 4340-0800 INT.
-        1047 FAX 54.011 4340-0800 INT. 1048"}, {"nombreId": "email", "nombre": "E-Mail",
-        "posicion": "8", "valor": "<a href=\"mailto:contacto@example.com\">contacto@example.com</a>"},
-        {"nombreId": "pagina_web", "nombre": "P\u00e1gina WEB", "posicion": "9", "valor":
-        "<a href=\"http://WWW.ANMAT.GOV.AR\" target=\"_blank\">WWW.ANMAT.GOV.AR</a>"},
-        {"nombreId": "redes_sociales", "nombre": "Redes Sociales", "posicion": "10",
-        "valor": ""}, {"nombreId": "dependencia", "nombre": "Dependencia", "posicion":
-        "11", "valor": "ADMINISTRACION NACIONAL DE MEDICAMENTOS Y TECNOLOGIA MEDICA
-        ANMAT"}, {"nombreId": "sector", "nombre": "Sector", "posicion": "12", "valor":
-        "PUBLICO"}, {"nombreId": "tematica", "nombre": "Tematica", "posicion": "13",
-        "valor": ""}, {"nombreId": "dias_semana", "nombre": "Atenci\u00f3n", "posicion":
-        "14", "valor": ""}, {"nombreId": "_nuevos_usa", "nombre": "Tipo de Libros",
-        "posicion": "15", "valor": ""}, {"nombreId": "direccion", "nombre": "Direcci\u00f3n",
-        "posicion": "16", "valor": "DE MAYO AV. 869"}, {"nombreId": "barrio", "nombre":
-        "Barrio", "posicion": "17", "valor": "MONSERRAT"}, {"nombreId": "comuna",
-        "nombre": "Comuna", "posicion": "18", "valor": "Comuna 1"}, {"nombreId": "observaciones",
-        "nombre": "Observaciones", "posicion": "19", "valor": ""}], "fechaAlta": "2022-01-04",
-        "ubicacion": {"centroide": "POINT (107754.844597 102260.035915)", "tipo":
-        "Punto"}, "fechaUltimaModificacion": "2022-01-04", "id": "dependencias_culturales|1635",
-        "direccionNormalizada": "DE MAYO AV. 869", "fechaActualizacion": "Septiembre
-        2012", "fuente": "Subsecretar\u00eda de Patrimonio Cultural (SSPCULT) del
-        Ministerio de Cultura", "claseId": "dependencias_culturales", "clase": "Dependencias
-        Culturales", "idForaneo": "-1"}'
-  recorded_at: Tue, 15 Sep 2026 18:35:06 GMT
+        "1", "valor": "Sede Comunal 4"}, {"nombreId": "direccion", "nombre": "Direcci\u00f3n",
+        "posicion": "2", "valor": "BARCO CENTENERA del 2906 "}, {"nombreId": "telefonos",
+        "nombre": "Tel\u00e9fonos", "posicion": "3", "valor": "4918-2243/1815/8920-4949
+        9024 int 105"}, {"nombreId": "barrio", "nombre": "Barrio", "posicion": "4",
+        "valor": "NUEVA POMPEYA"}, {"nombreId": "comuna", "nombre": "Comuna", "posicion":
+        "5", "valor": "Comuna 4"}, {"nombreId": "tramites_y_servicios", "nombre":
+        "Tr\u00e1mites y servicios", "posicion": "6", "valor": "<a href=\"https://buenosaires.gob.ar/jefaturadegabinete/atencion-ciudadana-y-gestion-comunal/gestion-comunal/comuna-4\"
+        target=\"_blank\">P\u00e1gina web</a>"}, {"nombreId": "observaciones", "nombre":
+        "Observaciones", "posicion": "7", "valor": ""}], "fechaAlta": "2013-10-08",
+        "ubicacion": {"centroide": "POINT (103542.8167999996 97663.39549999985)",
+        "tipo": "Punto"}, "fechaUltimaModificacion": "2024-04-11", "id": "sedes_de_comunas|4",
+        "direccionNormalizada": "BARCO CENTENERA del 2906", "fechaActualizacion":
+        "", "fuente": "USIG", "claseId": "sedes_de_comunas", "clase": "Sedes de Comunas",
+        "idForaneo": "-1"}'
+  recorded_at: Tue, 15 Sep 2026 18:49:39 GMT
 - request:
     method: get
-    uri: https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas?output=lonlat&x=107754.844597&y=102260.035915
+    uri: https://ws.usig.buenosaires.gob.ar/rest/convertir_coordenadas?output=lonlat&x=103542.8167999996&y=97663.39549999985
     body:
       encoding: US-ASCII
       string: ''
@@ -93,7 +77,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 15 Sep 2026 20:13:15 GMT
+      - Tue, 15 Sep 2026 20:27:48 GMT
       Server:
       - Apache
       X-Powered-By:
@@ -106,6 +90,6 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"tipo_resultado":"Ok","resultado":{"x":"-58.378755","y":"-34.608867"}}'
-  recorded_at: Tue, 15 Sep 2026 18:35:06 GMT
+      string: '{"tipo_resultado":"Ok","resultado":{"x":"-58.424656","y":"-34.650325"}}'
+  recorded_at: Tue, 15 Sep 2026 18:49:40 GMT
 recorded_with: VCR 6.4.0
