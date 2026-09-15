@@ -17,8 +17,10 @@ module Epok
       object
     end
 
-    def self.search(query)
-      get("/buscar/", texto: query)["instancias"]
+    def self.search(query, categories = nil, limit = nil)
+      params = { texto: query, categoria: categories, limit: limit }.compact
+
+      get("/buscar/", params)["instancias"]
     end
 
     def self.geocoder(x, y, categories, radius)

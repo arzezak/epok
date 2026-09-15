@@ -9,8 +9,10 @@ module Epok
 
   DEFAULT_RADIUS = 500
 
-  def self.search(query)
-    Collection.new { API.search(query) }
+  def self.search(query, categories: nil, limit: nil)
+    categories = Array(categories).join(",") if categories
+
+    Collection.new { API.search(query, categories, limit) }
   end
 
   def self.geocoder(location, categories, radius: DEFAULT_RADIUS)

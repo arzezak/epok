@@ -16,26 +16,30 @@ The API rejects curl's default User-Agent, but Ruby's Net::HTTP works fine.
 
 ## API notes
 
-- `/buscar/`, `/reverseGeocoderLugares/` and `/getObjectContent/` are the
-  documented endpoints. `/getCategorias/` is not documented but lists all
-  categories the geocoder accepts.
+Official docs are Swagger specs on the city's 3scale portal. The HTML at
+https://datosabiertos-apis.buenosaires.gob.ar/BA_Root/Documentacion is
+JavaScript-rendered; fetch the JSON directly:
+
+- Index: https://datosabiertos-apis.buenosaires.gob.ar/api_docs/services.json
+- EPOk ("Busquedas de Lugares"): .../api_docs/services/10.json
+- USIG Geocoder: .../api_docs/services/8.json
+- Datos Útiles: .../api_docs/services/9.json
+
+The specs list `datosabiertos-*-apis.buenosaires.gob.ar` hosts that return
+404. The live hosts are `epok.buenosaires.gob.ar` for EPOk and
+`ws.usig.buenosaires.gob.ar` for USIG (REST index with docs at
+https://ws.usig.buenosaires.gob.ar/rest/).
+
+- `/buscar/` also takes `categoria` (comma-separated), `clase`, `bbox`,
+  `start`, `limit` and `totalFull`.
+- `/reverseGeocoderLugares/` takes `srid` (default 4326) and `radio`
+  (default 1 metre, hence our 500 default).
 - Unknown ids return `200 {}`, unknown categories return an empty list.
 - Object coordinates are projected (Gauss-Krüger Buenos Aires). USIG's
-  `convertir_coordenadas` service turns them into longitude and latitude.
-
-## Releasing
-
-1. Make sure `main` is clean and pushed, and `bundle exec rake test` passes.
-2. Bump `Epok::VERSION` in `lib/epok/version.rb`. Follow semver:
-   patch for fixes, minor for new behaviour, major for breaking changes.
-3. Commit it as `Bump version to X.Y.Z`.
-4. Run `bundle exec rake release`. This builds the gem into `pkg/`, creates
-   and pushes the `vX.Y.Z` tag, and pushes the gem to rubygems.org.
-   The push prompts for a rubygems OTP, so it has to run in an interactive
-   terminal. If it fails after tagging, push the built gem directly:
-   `gem push pkg/epok-X.Y.Z.gem`.
-5. Create a GitHub release from the tag with a short summary of what changed:
-   `gh release create vX.Y.Z --generate-notes`.
-
-Version numbers on rubygems.org cannot be reused, so check the diff before
-running step 4.
+  `/rest/convertir_coordenadas` turns them into longitude and latitude.
+- Not wrapped yet: `ws.usig.buenosaires.gob.ar/datos_utiles?x=&y=` (barrio,
+  comuna, comisaría for a lat/lng) and
+  `servicios.usig.buenosaires.gob.ar/normalizar/?direccion=&geocodificar=true`
+  (address to lat/lng).
+- A December 2025 city report says "API USIG" is being replaced by
+  "API Servicios Geo" during 2026. The USIG hosts above may move.

@@ -22,6 +22,22 @@ module Epok
       assert_match "Peña", Epok.search("plaza peña").first.name
     end
 
+    def test_that_search_filters_by_category
+      results = Epok.search("san martin", categories: "estaciones_de_subte")
+
+      assert_equal ["estaciones_de_subte"], results.map(&:category).uniq
+    end
+
+    def test_that_search_filters_by_several_categories
+      results = Epok.search("san martin", categories: %w[estaciones_de_subte estaciones_de_ferrocarril])
+
+      assert_equal %w[estaciones_de_ferrocarril estaciones_de_subte], results.map(&:category).uniq.sort
+    end
+
+    def test_that_search_limits_results
+      assert_equal 2, Epok.search("san martin", limit: 2).count
+    end
+
     private
 
     def result
