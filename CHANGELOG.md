@@ -14,6 +14,10 @@ follows [Semantic Versioning](https://semver.org/).
   The API pads and double-spaces names at random, in every endpoint, and the
   per-field strips it replaces only covered some of them.
 
+- Gemspec declares `required_ruby_version >= 3.3`, links the changelog and
+  source on rubygems.org, and ships only `lib/`, README, CHANGELOG and
+  LICENSE instead of the whole repository (tests and cassettes included).
+
 ### Fixed
 
 - Malformed responses no longer escape as `NoMethodError`: an unparseable

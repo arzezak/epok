@@ -45,6 +45,9 @@ https://ws.usig.buenosaires.gob.ar/rest/).
 - Unknown ids return `200 {}`, unknown categories return an empty list.
   Some nearby results point at ids with no record (6 of 20 pharmacies
   near the Obelisco), so `content` can raise NotFound on a listed object.
+- Pharmacy geometry is unreliable: `farmacias` records near the Obelisco
+  resolve to centroids kilometres away, and names, addresses and points
+  disagree with each other. Other categories checked (subte, sedes) match.
 - Strings come back padded or double-spaced at random, in every endpoint.
   `API.get` normalizes all of them once; nothing else should strip.
 - Object coordinates are projected (Gauss-Krüger Buenos Aires). USIG's
