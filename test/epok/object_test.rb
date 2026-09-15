@@ -11,22 +11,26 @@ module Epok
     end
 
     def test_that_an_object_has_a_name
-      assert_equal "Calesita del Parque Saavedra", object.name
+      assert_equal "BIBLIOTECA ANMAT ", object.name
     end
 
     def test_that_an_object_has_a_normalized_address
-      assert_equal "GARCIA DEL RIO y CONDE", object.normalized_address
+      assert_equal "DE MAYO AV. 869", object.normalized_address
     end
 
     def test_that_an_object_has_content
       expected_content = {
-        "Nombre" => "Calesita del Parque Saavedra",
-        "Dirección" => "GARCIA DEL RIO y CONDE (CP 1430) - Saavedra - Comuna 12",
-        "Actividad Principal" => "Calesita",
-        "Días y Horarios" => "Todos los días de 10:00 a 12:00 y de 14:00 a 19:30.",
-        "Observaciones" => "Los días de lluvia la calesita se encuentra cerrada.",
-        "Sector" => "Privado",
-        "Público" => "Niños"
+        "Nombre" => "BIBLIOTECA ANMAT ",
+        "Categoria" => "BIBLIOTECA",
+        "Subcategoria" => "ESPECIALIZADA GUBERNAMENTAL",
+        "Teléfonos" => "54.011 4340-0800 INT. 1047 FAX 54.011 4340-0800 INT. 1048",
+        "E-Mail" => "<a href=\"mailto:contacto@example.com\">contacto@example.com</a>",
+        "Página WEB" => "<a href=\"http://WWW.ANMAT.GOV.AR\" target=\"_blank\">WWW.ANMAT.GOV.AR</a>",
+        "Dependencia" => "ADMINISTRACION NACIONAL DE MEDICAMENTOS Y TECNOLOGIA MEDICA ANMAT",
+        "Sector" => "PUBLICO",
+        "Dirección" => "DE MAYO AV. 869",
+        "Barrio" => "MONSERRAT",
+        "Comuna" => "Comuna 1"
       }
 
       assert_equal expected_content, object.content

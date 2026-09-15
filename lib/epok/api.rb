@@ -3,22 +3,25 @@ require "json"
 
 module Epok
   class API
-    BASE_URL = "epok.buenosaires.gob.ar".freeze
+    BASE_URL = "https://epok.buenosaires.gob.ar".freeze
 
     def self.object(id)
-      response = Net::HTTP.get_response(BASE_URL, "/getObjectContent/?id=#{id}")
-      JSON.parse(response.body)
+      JSON.parse(get("/getObjectContent/?id=#{id}"))
     end
 
     def self.search(query)
-      response = Net::HTTP.get_response(BASE_URL, "/buscar/?texto=#{query}")
-      JSON.parse(response.body)["instancias"]
+      JSON.parse(get("/buscar/?texto=#{query}"))["instancias"]
     end
 
     def self.geocoder(x, y, categories)
-      response = Net::HTTP.get_response(BASE_URL,
-        "/reverseGeocoderLugares/?x=#{x}&y=#{y}&categorias=#{categories}&radio=500")
-      JSON.parse(response.body)["instancias"]
+      JSON.parse(get(
+        "/reverseGeocoderLugares/?x=#{x}&y=#{y}&categorias=#{categories}&radio=500"
+      ))["instancias"]
     end
+
+    def self.get(path)
+      Net::HTTP.get_response(URI("#{BASE_URL}#{path}")).body
+    end
+    private_class_method :get
   end
 end
