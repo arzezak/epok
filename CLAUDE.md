@@ -20,10 +20,11 @@ The API rejects curl's default User-Agent, but Ruby's Net::HTTP works fine.
 2. Bump `Epok::VERSION` in `lib/epok/version.rb`. Follow semver:
    patch for fixes, minor for new behaviour, major for breaking changes.
 3. Commit it as `Bump version to X.Y.Z`.
-4. Run `bundle exec rake release`. This builds the gem, creates and pushes
-   the `vX.Y.Z` tag, and pushes the gem to rubygems.org. It needs rubygems
-   credentials (`gem signin`) and may prompt for an OTP if the account has
-   MFA enabled. If it prompts, the user has to run it themselves.
+4. Run `bundle exec rake release`. This builds the gem into `pkg/`, creates
+   and pushes the `vX.Y.Z` tag, and pushes the gem to rubygems.org.
+   The push prompts for a rubygems OTP, so it has to run in an interactive
+   terminal. If it fails after tagging, push the built gem directly:
+   `gem push pkg/epok-X.Y.Z.gem`.
 5. Create a GitHub release from the tag with a short summary of what changed:
    `gh release create vX.Y.Z --generate-notes`.
 
