@@ -20,62 +20,6 @@ Or install it yourself as:
 
 ## Usage
 
-Everything starts from a location (longitude, latitude) or a text search:
-
-```ruby
->> obelisco = Epok::Location.new(x: -58.381570, y: -34.603738)
-=> #<struct Epok::Location x=-58.38157, y=-34.603738>
-
->> nearby = Epok.geocoder(obelisco, %w[farmacias estaciones_de_subte], radius: 300)
-=> #<Epok::Collection:0x00007f8719ab4f08 ...>
-
->> nearby.sort_by(&:distance).first(3).map { |o| [o.name, o.kind, o.distance.round] }
-=> [["C. PELLEGRINI (Línea B)", "Estación de Subte (Metro)", 79],
-    ["Farmacia en PELLEGRINI, CARLOS 423", "Farmacia", 83],
-    ["9 DE JULIO (Línea D)", "Estación de Subte (Metro)", 107]]
-
->> sede_4 = Epok.search("cgp").first
-=> #<Epok::Object:0x00007f8719b36788 @id="sedes_de_comunas|4" ...>
-
->> sede_4.name
-=> "Sede Comunal 4"
-
->> sede_4.content
-=> {"Nombre"=>"Sede Comunal 4", "Dirección"=>"BARCO CENTENERA del 2906", "Barrio"=>"NUEVA POMPEYA", "Comuna"=>"Comuna 4", ...}
-
->> sede_4.location
-=> #<struct Epok::Location x=-58.41..., y=-34.65...>
-```
-
-Collections are `Enumerable` and fetch lazily, so nothing is requested until you iterate.
-
-An `Epok::Object` knows its `id`, `name`, `kind`, `category` and (from the geocoder) `distance` in metres straight from the listing. `content`, `normalized_address` and `location` fetch the full record on first use, and `location` makes one more request to the city's USIG service to convert the projected coordinates to longitude and latitude.
-
-The geocoder takes one category or an array. The full list, with ids and display names, is:
-
-```ruby
->> Epok.categories.first
-=> #<struct Epok::Category id="academias_de_espanol", name="Academias de Español", description="">
-```
-
-Typed addresses become locations through the city's USIG normalizer. Every match is returned, across the whole metro area, so the first one is usually the city's:
-
-```ruby
->> Epok.geocode("callao y corrientes").first
-=> #<struct Epok::Address address="CALLAO AV. y CORRIENTES AV., CABA", partido="CABA", localidad="CABA", location=#<struct Epok::Location x=-58.392293, y=-34.604434>>
-```
-
-To know where a location is, `Epok.datos_utiles` asks the city's USIG service for the neighbourhood, comuna, police precinct, hospital area, and school district. Outside the city those are nil and the AMBA partido and localidad are filled instead:
-
-```ruby
->> Epok.datos_utiles(obelisco)
-=> #<struct Epok::DatosUtiles barrio="San Nicolas", comuna="Comuna 1", comisaria="3", comisaria_vecinal="1B", area_hospitalaria="HTAL. DR. J.M. RAMOS MEJÍA", region_sanitaria="I (Este)", distrito_escolar="Distrito Escolar I", partido_amba=nil, localidad_amba=nil>
-```
-
-Every request failure raises `Epok::Error`. An id that does not exist raises `Epok::NotFound`.
-
-## Putting it together
-
 "I'm at Callao y Corrientes, what's around me?" in five requests:
 
 ```ruby
@@ -118,6 +62,30 @@ Pin: -34.604419, -58.392318
 ```
 
 Steps 1 to 3 are one request each; step 4 is two (the record, then the coordinate conversion). The content hash is whatever the city publishes for that category: subway stations carry line, status and travel time, pharmacies carry phone and delivery details.
+
+### The rest
+
+**Search by text**, optionally filtered by category and capped:
+
+```ruby
+Epok.search("cgp", categories: "sedes_de_comunas", limit: 3).map(&:name)
+# => ["Sede Comunal 4", "Sede Comunal 9", "Sede Comunal 10"]
+```
+
+**Categories** are what the geocoder and the search filter take. There are 167, each with an id, a display name and a description:
+
+```ruby
+Epok.categories.find { |c| c.id == "farmacias" }
+# => #<struct Epok::Category id="farmacias", name="Farmacias", description="">
+```
+
+**Collections** from `search` and `geocoder` are `Enumerable` and lazy: nothing is requested until you iterate.
+
+**Objects** know their `id`, `name`, `kind`, `category` and, from the geocoder, `distance` in metres straight from the listing. `content`, `normalized_address` and `location` fetch the full record on first use; `location` also converts the city's projected coordinates through USIG. `Epok::Object.new("farmacias|1082")` looks one up by id.
+
+**Locations** are `Epok::Location.new(x: longitude, y: latitude)`. `geocode` returns every match across the metro area, city first, as `Address` structs with `address`, `partido`, `localidad` and `location`. `datos_utiles` returns nil for the city fields outside CABA and fills `partido_amba` and `localidad_amba` instead.
+
+**Errors**: every request failure raises `Epok::Error`. An unknown id or address raises `Epok::NotFound`.
 
 ## Development
 
