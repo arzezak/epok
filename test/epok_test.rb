@@ -5,9 +5,9 @@ class EpokTest < Minitest::Test
     assert_instance_of Epok::Collection, Epok.search("garicoits")
   end
 
-  def test_that_geocoder_builds_a_collection
+  def test_that_nearby_builds_a_collection
     obelisco = Epok::Location.new(x: -58.381570, y: -34.603738)
 
-    assert_instance_of Epok::Collection, Epok.geocoder(obelisco, "farmacias")
+    assert_instance_of Epok::Collection, Epok.nearby(obelisco, "farmacias")
   end
 end

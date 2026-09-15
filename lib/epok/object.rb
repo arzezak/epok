@@ -3,7 +3,7 @@ module Epok
     attr_reader :id, :distance
 
     # Accepts either an id ("farmacias|1082") or a result hash from a search
-    # or geocoder listing. Listing attributes are available immediately; the
+    # or nearby listing. Listing attributes are available immediately; the
     # full content is fetched on first use.
     def initialize(attributes)
       attributes = { "id" => attributes } if attributes.is_a?(String)

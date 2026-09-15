@@ -8,6 +8,8 @@ follows [Semantic Versioning](https://semver.org/).
 
 ### Changed
 
+- **Breaking:** `Epok.geocoder` is now `Epok.nearby`. Next to `Epok.geocode`
+  (address to point) the old name read as the same thing backwards.
 - Every string in an API response is stripped and squeezed once in `API.get`.
   The API pads and double-spaces names at random, in every endpoint, and the
   per-field strips it replaces only covered some of them.

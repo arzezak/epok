@@ -23,10 +23,10 @@ module Epok
     Collection.new { API.search(query, categories, limit) }
   end
 
-  def self.geocoder(location, categories, radius: DEFAULT_RADIUS)
+  def self.nearby(location, categories, radius: DEFAULT_RADIUS)
     categories = Array(categories).join(",")
 
-    Collection.new { API.geocoder(location.x, location.y, categories, radius) }
+    Collection.new { API.nearby(location.x, location.y, categories, radius) }
   end
 
   def self.geocode(text)

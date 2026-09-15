@@ -24,7 +24,7 @@ module Epok
       get(EPOK_URL, "/buscar/", params)["instancias"]
     end
 
-    def self.geocoder(x, y, categories, radius)
+    def self.nearby(x, y, categories, radius)
       get(EPOK_URL, "/reverseGeocoderLugares/",
         x: x, y: y, categorias: categories, radio: radius)["instancias"]
     end

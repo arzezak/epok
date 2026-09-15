@@ -34,7 +34,7 @@ area = Epok.datos_utiles(here.location)
 puts "That's #{area.barrio}, #{area.comuna}"
 
 # 3. What's within 300 metres, by category?
-nearby = Epok.geocoder(here.location, %w[estaciones_de_subte farmacias], radius: 300)
+nearby = Epok.nearby(here.location, %w[estaciones_de_subte farmacias], radius: 300)
 nearby.sort_by(&:distance).first(5).each do |place|
   puts "  #{place.distance.round} m  #{place.name} (#{place.kind})"
 end
@@ -72,16 +72,16 @@ Epok.search("cgp", categories: "sedes_de_comunas", limit: 3).map(&:name)
 # => ["Sede Comunal 4", "Sede Comunal 9", "Sede Comunal 10"]
 ```
 
-**Categories** are what the geocoder and the search filter take. There are 167, each with an id, a display name and a description:
+**Categories** are what `nearby` and the search filter take. There are 167, each with an id, a display name and a description:
 
 ```ruby
 Epok.categories.find { |c| c.id == "farmacias" }
 # => #<struct Epok::Category id="farmacias", name="Farmacias", description="">
 ```
 
-**Collections** from `search` and `geocoder` are `Enumerable` and lazy: nothing is requested until you iterate.
+**Collections** from `search` and `nearby` are `Enumerable` and lazy: nothing is requested until you iterate.
 
-**Objects** know their `id`, `name`, `kind`, `category` and, from the geocoder, `distance` in metres straight from the listing. `content`, `normalized_address` and `location` fetch the full record on first use; `location` also converts the city's projected coordinates through USIG. `Epok::Object.new("farmacias|1082")` looks one up by id.
+**Objects** know their `id`, `name`, `kind`, `category` and, from `nearby`, `distance` in metres straight from the listing. `content`, `normalized_address` and `location` fetch the full record on first use; `location` also converts the city's projected coordinates through USIG. `Epok::Object.new("farmacias|1082")` looks one up by id.
 
 **Locations** are `Epok::Location.new(x: longitude, y: latitude)`. `geocode` returns every match across the metro area, city first, as `Address` structs with `address`, `partido`, `localidad` and `location`. `datos_utiles` returns nil for the city fields outside CABA and fills `partido_amba` and `localidad_amba` instead.
 
