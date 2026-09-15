@@ -11,7 +11,7 @@ module Epok
     end
 
     def test_that_an_object_has_a_name
-      assert_equal "BIBLIOTECA ANMAT ", object.name
+      assert_equal "BIBLIOTECA ANMAT", object.name
     end
 
     def test_that_an_object_has_a_normalized_address
@@ -20,7 +20,7 @@ module Epok
 
     def test_that_an_object_has_content
       expected_content = {
-        "Nombre" => "BIBLIOTECA ANMAT ",
+        "Nombre" => "BIBLIOTECA ANMAT",
         "Categoria" => "BIBLIOTECA",
         "Subcategoria" => "ESPECIALIZADA GUBERNAMENTAL",
         "Teléfonos" => "54.011 4340-0800 INT. 1047 FAX 54.011 4340-0800 INT. 1048",

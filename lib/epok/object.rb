@@ -17,6 +17,7 @@ module Epok
     def content
       object["contenido"].each_with_object({}) do |entry, hash|
         name, value = entry.values_at("nombre", "valor")
+        value = value.strip
         hash[name] = value unless value.empty?
       end
     end
