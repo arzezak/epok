@@ -13,9 +13,13 @@ module Epok
       get("/buscar/", texto: query)["instancias"]
     end
 
-    def self.geocoder(x, y, categories)
+    def self.geocoder(x, y, categories, radius)
       get("/reverseGeocoderLugares/",
-        x: x, y: y, categorias: categories, radio: 500)["instancias"]
+        x: x, y: y, categorias: categories, radio: radius)["instancias"]
+    end
+
+    def self.categories
+      get("/getCategorias/", {})["categorias"]
     end
 
     def self.get(path, params)
